@@ -1,0 +1,45 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px; /* Adjust the width of your logo */
+    height: auto;
+    margin-right: 10px;
+}
+
+.nav-links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links a {
+    margin: 0 10px; /* Adjust spacing between links */
+    color: #fff;
+    text-decoration: none;
+}
+
+.right-section .btn {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.right-section .btn + .btn {
+    margin-left: 10px;
+}
