@@ -1,4 +1,162 @@
-/* Add a fade-in animation to the text */
+.choose-us-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.choose-us-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.choose-us-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #007bff; /* Adjust icon color as needed */
+}
+
+.choose-us-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff; /* Adjust heading color as needed */
+}
+
+.fade-in-text {
+    animation: fadeIn 3s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Styling for the Our Services section */
+.services-list {
+    background-color: #f8f9fa; /* Background color */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px; /* Add some space between sections */
+}
+
+.services-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(0, 0, 0); /* Text color */
+    margin-bottom: 20px; /* Add space below the heading */
+}
+
+/* Styling for the service items */
+.service-item {
+    text-align: center;
+}
+
+.service-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-content img {
+    max-width: 100px; /* Adjust the width as needed */
+    height: auto;
+    border-radius: 10px;
+}
+
+.service-name {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333; /* Text color */
+}
+
+/* Styling for slider dots */
+.slick-dots li button {
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #007bff; /* Dot color */
+    border: none;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #0056b3; /* Active dot color */
+}
+
+/* Hover effect for service items */
+.service-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+
+.service-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-content img {
+    max-width: 100px; /* Adjust the width as needed */
+    height: auto;
+    border-radius: 10px;
+}
+
+.service-name {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.service-item {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.service-item img {
+    max-width: 100px; /* Adjust the width as needed */
+    height: auto;
+    border-radius: 10px;
+}
+
+.service-name {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.services-list {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+.services {
+    list-style: none;
+    padding: 0;
+}
+
+.services li {
+    margin-bottom: 10px;
+}
+
+.why-choose-us {
+    padding: 20px;
+}
+
+.choose-us-list p {
+    margin-bottom: 15px;
+}
+
+.choose-us-list p:last-child {
+    margin-bottom: 0;
+}
+
 .fade-in-text {
     animation: fadeIn 3s ease forwards;
     /* Use 'forwards' to keep the final state */
@@ -105,9 +263,7 @@
     animation: fadeIn 1s ease forwards;
 }
 
-.hero__content {
-    padding-top: 3.5rem;
-}
+
 
 .hero__img-box {
     padding-top: 2rem;
