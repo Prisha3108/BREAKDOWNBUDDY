@@ -1,29 +1,115 @@
-.peach-rectangle {
-    height: 400px; /* Adjust height of peach rectangle */
-    background-color: peachpuff; /* Adjust peach color */
-    width: 100%; /* Make it span the entire width */
-    margin-top: 20px; /* Add margin-top to create space above the rectangle */
-    position: relative; /* Position relative for absolute positioning of smaller rectangles */
+/* Add a fade-in animation to the text */
+.fade-in-text {
+    animation: fadeIn 3s ease forwards;
+    /* Use 'forwards' to keep the final state */
+    opacity: 0;
+    /* Start with text hidden */
 }
 
-.curved-rectangles {
-    position: absolute; /* Position absolute to position smaller rectangles */
-    top: 50%; /* Position vertically at 50% */
-    right: 70px; /* Adjust right position */
-    transform: translateY(-50%); /* Adjust vertical centering */
-    display: flex; /* Use flexbox for horizontal positioning */
-    flex-direction: column; /* Align rectangles vertically */
+.hero__img-box {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
 }
 
-.curved-rectangle {
-    width: 50px; /* Adjust width of curved rectangles */
-    height: 100px; /* Adjust height of curved rectangles */
-    background-color: #fff; /* Adjust background color */
-    border-radius: 50px; /* Make it half of the height */
-    margin-left: 20px; /* Adjust spacing between curved rectangles */
+.hero__img-box img,
+.hero__img-box video {
+    max-width: 100%; /* Allow images and video to adjust within their container */
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid var(--secondary-color);
+    object-fit: cover;
+    animation: fadeIn 1s ease forwards;
 }
 
-/* Adjust margin-left for the first rectangle */
-.curved-rectangle.left:first-child {
-    margin-left: 0;
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        /* Fully visible at the end */
+    }
 }
+
+/* Define the animation */
+  @keyframes backgroundAnimation {
+    0% {
+      background-color: #85C1E9; /* Deep Blue */
+    }
+    25% {
+      background-color: #AED6F1; /* Light Blue */
+    }
+    50% {
+      background-color: #ABEBC6; /* Green */
+    }
+    75% {
+      background-color: #F9E79F; /* Yellow */
+    }
+    100% {
+      background-color: #85C1E9; /* Back to Deep Blue */
+    }
+  }
+  
+
+/* Apply the animation to the home page container */
+.home-page-container {
+    animation: backgroundAnimation 10s linear infinite;
+  
+}
+
+
+.hero-container {
+    padding: 20px;
+    /* Adjust the value as needed to control the amount of white space */
+}
+
+
+.hero__subtitle img {
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+.hero__content h1 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: var(--heading-color);
+}
+
+.hero__content h1 .highlight {
+    color: var(--secondary-color);
+}
+
+.hero__content p {
+    font-style: 1.1rem;
+    color: #154360;
+    line-height: 2rem;
+}
+
+.hero__img-box img,
+.hero__img-box video {
+    width: 25%;
+    height: 350px;
+    border-radius: 20px;
+    border: 1px solid var(--secondary-color);
+    object-fit: cover;
+    autoplay: true;
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero__content {
+    padding-top: 3.5rem;
+}
+
+.hero__img-box {
+    padding-top: 2rem;
+}
+
