@@ -1,0 +1,41 @@
+.horizontal_bar{
+    width: 65%;
+    height: 5.1rem;
+    margin: 1rem 0 0 13rem;
+}
+.horizontal_bar .bar_button{
+    width: 16%;
+    padding: 1.94%;
+    /* height: 30%; */
+    display: inline-block;
+    background-color: #a4e1f4;
+    text-decoration: none;
+    text-align: center;
+    border-right: 1px solid rgb(183, 180, 180);
+    text-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 0.5rem;
+    color: #000;
+}
+/* .bar_button{
+    width: 40%;
+    height: 1rem;
+    padding: 0.5%;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.1rem;
+    margin-top: 1rem !important;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    color: #a4e1f4;
+    border-radius: 0.5rem;
+} */
+.bar_button:hover,
+.bar_button:active,
+.bar_button:focus{
+    background-color: #88bdf2;
+    color: #000;
+}
+.active-link {
+    background-color: #88bdf2;
+    color: #000;
+}

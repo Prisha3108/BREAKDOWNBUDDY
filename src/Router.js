@@ -6,6 +6,10 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Profile from './components/Customer/Profile';
+import FuelForm from './components/Customer/FuelForm';
+import History from './components/Customer/History';
+import ContactUs from './components/Customer/Feedback';
 
 function AppRouter() {
     return (
@@ -16,6 +20,10 @@ function AppRouter() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/feedback" element={<ContactUs />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/fuelrequest" element={<FuelForm />} />
         </Routes>
     );
 }

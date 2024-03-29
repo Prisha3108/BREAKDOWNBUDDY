@@ -1,0 +1,50 @@
+.feedback_image{
+    width: 110%;
+    height: 75%;
+    object-fit: cover;
+    margin: 2.5rem 0 0 0rem;
+}
+.review_name, .review_email{
+    margin: 0rem 0 0 6rem;
+    text-align: center;
+}
+.review_msg{
+    margin: 2rem 0 0 6rem;
+    text-align: center;
+}
+#review_name{
+    margin: 5rem 0 0 3.3rem;
+    height: 3vh;
+    width: 44%;
+}
+#review_email{
+    margin: 1rem 0 0 3.57rem;
+    height: 3vh;
+    width: 44%;
+}
+#review_msg{
+    margin: 1rem 0 0 2.3rem;
+    width: 44.5%;
+    height: 10vh;
+}
+.customer_msg{
+    display: flex;
+}
+.feedback_form{
+    background-color: #ede9e999;
+    width: 64.8%;
+    height: 60vh;
+    margin: 0rem 0 0 13rem;
+    display: flex;
+    
+}
+.review_submit {
+    margin: 2.5rem 0 0 13rem;
+    width: 24%;
+    padding: 2%;
+    background-color: #88bdf2;
+    border: #88bdf2;
+    border-radius: 5px;
+}
+
+  
