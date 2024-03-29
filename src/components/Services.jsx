@@ -2,7 +2,7 @@ import React from 'react';
 import ServiceCard from './ServiceCard';
 import './css/Services.css';
 
-import backgroundImage from '/Users/prishapatel/BREAKDOWNBUDDY/src/assests/headerservicesimg.jpeg'; // Update the path to the image
+import backgroundImage from '../assests/headerservicesimg.jpeg'; // Update the path to the image
 import fuelImg from '../assests/fuelimage.jpeg';
 import batteryImg from '../assests/batteryimage.jpeg'; // Update the path to the battery image
 import towImg from '../assests/towimage.jpeg';
