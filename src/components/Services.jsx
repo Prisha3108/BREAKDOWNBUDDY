@@ -2,7 +2,7 @@ import React from 'react';
 import ServiceCard from './ServiceCard';
 import './css/Services.css';
 
-import backgroundImage from '../assests/carimg.jpeg'; // Update the path to the background image
+import backgroundImage from '/Users/prishapatel/BREAKDOWNBUDDY/src/assests/headerservicesimg.jpeg'; // Update the path to the image
 import fuelImg from '../assests/fuelimage.jpeg';
 import batteryImg from '../assests/batteryimage.jpeg'; // Update the path to the battery image
 import towImg from '../assests/towimage.jpeg';
@@ -34,10 +34,11 @@ const servicesData = [
 const Services = () => {
     return (
         <div className="services-container">
-            <div className="header-image" style={{backgroundImage: `url(${backgroundImage})`}}>
-                {/* You can place additional content here if needed */}
+            <div className="header-image">
+                <img src={backgroundImage} alt="Background Image" style={{ width: '100%', height: 'auto' }} />
+                <h2>Our Services</h2>
+                {/* Optional: You can add content or additional images here */}
             </div>
-            <h2>Our Services</h2>
             <div className="service__list">
                 {servicesData.map((service, index) => (
                     <ServiceCard key={index} service={service} />

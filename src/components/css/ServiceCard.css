@@ -35,3 +35,21 @@
     margin: auto; /* Center the service list horizontally */
     text-align: left; /* Align the text inside the service list to the left */
 }
+.requestButton {
+    background-color: lightblue; /* Change button color to light blue */
+    color: rgba(14, 13, 13, 0.854); /* Text color */
+    padding: 10px 20px; /* Adjust padding to increase button size */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+}
+
+.requestButton:hover {
+    background-color: skyblue; /* Change button color on hover */
+}
+
+.requestButton span {
+    color: black; /* Change text color to black */
+}
