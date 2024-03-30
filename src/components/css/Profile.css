@@ -1,0 +1,83 @@
+/* Profile.css */
+.profile_page{
+    background-color: #ede9e999;
+    width: 64.8%;
+    height: 70vh;
+    margin: 0rem 0 0 13rem;
+    border-radius: 5px;
+}
+.profile-container {
+    max-width: 60%;
+    height: 65vh;
+    margin: 0 auto;
+}
+.user_profile{
+    text-align: center;
+    padding-top: 1rem;
+} 
+.profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+  
+.profile-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+    position: relative;
+    box-shadow: inset -0.1rem 0rem 0.15rem 0rem #00000040;
+}
+.profile-table td input {
+    width: 80%;
+    padding: 0.3rem;
+    box-sizing: border-box;
+}
+
+.profile-table td:first-child {
+    font-weight: bold;
+    width: 9rem;
+}
+
+.edit_btn{
+    margin: 1rem 0 0 16rem;
+    height: 5vh;
+    width: 15%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #88bdf2;
+    border-radius: 0.31rem;
+    border: 1.5px solid #88bdf2;
+}
+.save_btn{
+    margin: 1rem 0 0 8rem;
+    height: 5vh;
+    width: 15%;
+    font-size: 1rem;
+    color: rgb(97, 225, 83);
+    border-radius: 0.31rem;
+    border: 1.5px solid rgb(97, 225, 83);
+    font-weight: bold;
+}
+.cancel_btn{
+    color: rgb(240, 61, 61);
+    border-radius: 0.31rem;
+    border: 1.5px solid rgb(240, 61, 61);
+    font-weight: bold;
+    margin: 1rem 0 0 9.5rem;
+    height: 5vh;
+    width: 15%;
+    font-size: 1rem;
+}
+.cancel_btn:hover{
+    background-color: rgb(240, 61, 61);
+    color: #333;
+}
+.save_btn:hover{
+    background-color: rgb(97, 225, 83);
+    color: #333;
+}
+.edit_btn:hover{
+    background-color: #88bdf2;
+    color: #333;
+}

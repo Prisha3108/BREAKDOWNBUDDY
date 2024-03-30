@@ -1,13 +1,14 @@
 import React from 'react';
 import './css/ServiceCard.css'; // Assuming you have a CSS file for styling
+import { useNavigate } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
-    const { imgUrl, title, desc } = service;
+    const { imgUrl, title, desc, requestLink } = service;
+    const navigate = useNavigate();
 
     const handleRequest = () => {
-        // Define the behavior when the REQUEST button is clicked
-        console.log(`Requested ${title}`);
-        // You can add your request logic here
+        // Navigate to the request page when the REQUEST button is clicked
+        navigate(requestLink);
     };
 
     return (

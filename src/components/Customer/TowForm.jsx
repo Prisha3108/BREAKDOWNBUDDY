@@ -1,15 +1,14 @@
 import React from 'react'
 import HorizontalBar from './HorizontalBar'
 
-
-const FuelForm = () => {
+const TowForm = () => {
   return (
     <div>
       <HorizontalBar
-      serviceLink={'/fuelrequest'}/>
-      FuelForm
+      serviceLink={'/towrequest'}/>
+      towrequest
     </div>
   )
 }
 
-export default FuelForm
+export default TowForm

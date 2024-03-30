@@ -10,6 +10,9 @@ import Profile from './components/Customer/Profile';
 import FuelForm from './components/Customer/FuelForm';
 import History from './components/Customer/History';
 import ContactUs from './components/Customer/Feedback';
+import TyreForm from './components/Customer/TyreForm';
+import TowForm from './components/Customer/TowForm';
+import BatteryForm from './components/Customer/BatteryForm';
 
 function AppRouter() {
     return (
@@ -20,10 +23,13 @@ function AppRouter() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/history" element={<History />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/feedback" element={<ContactUs />} />
-            <Route path="/history" element={<History />} />
             <Route path="/fuelrequest" element={<FuelForm />} />
+            <Route path="/tyrerequest" element={<TyreForm />} />
+            <Route path="/towrequest" element={<TowForm />} />
+            <Route path="/batteryrequest" element={<BatteryForm />} />
         </Routes>
     );
 }

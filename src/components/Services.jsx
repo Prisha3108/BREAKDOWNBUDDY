@@ -12,22 +12,26 @@ const servicesData = [
     {
         imgUrl: fuelImg,
         title: "Fuel",
-        desc: "Get fuel delivery service on the spot."
+        desc: "Get fuel delivery service on the spot.",
+        requestLink: "/fuelrequest"
     },
     {
         imgUrl: batteryImg,
         title: "Battery Change",
-        desc: "Get your vehicle's battery replaced wherever you are."
+        desc: "Get your vehicle's battery replaced wherever you are.",
+        requestLink: "/batteryrequest"
     },
     {
         imgUrl: towImg,
         title: "Tow the Car",
-        desc: "Tow your vehicle to the nearest service center."
+        desc: "Tow your vehicle to the nearest service center.",
+        requestLink: "/towrequest"
     },
     {
         imgUrl: tyreImg,
         title: "Tyre Change",
-        desc: "Replace your vehicle's tyre at your location."
+        desc: "Replace your vehicle's tyre at your location.",
+        requestLink: "/tyrerequest"
     }
 ];
 
