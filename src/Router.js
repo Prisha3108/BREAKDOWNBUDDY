@@ -9,7 +9,7 @@ import Signup from './components/Signup';
 import Profile from './components/Customer/Profile';
 import FuelForm from './components/Customer/FuelForm';
 import History from './components/Customer/History';
-import ContactUs from './components/Customer/Feedback';
+import Feedback from './components/Customer/Feedback';
 import TyreForm from './components/Customer/TyreForm';
 import TowForm from './components/Customer/TowForm';
 import BatteryForm from './components/Customer/BatteryForm';
@@ -25,7 +25,7 @@ function AppRouter() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/history" element={<History />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/feedback" element={<ContactUs />} />
+            <Route path="/feedback" element={<Feedback />} />
             <Route path="/fuelrequest" element={<FuelForm />} />
             <Route path="/tyrerequest" element={<TyreForm />} />
             <Route path="/towrequest" element={<TowForm />} />

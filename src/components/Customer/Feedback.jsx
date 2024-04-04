@@ -1,10 +1,11 @@
+// Feedback.jsx
 import HorizontalBar from './HorizontalBar'
 import '../css/Feedback.css'
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import img from '../../assests/feedback.png';
 
-const ContactUs = () => {
+const Feedback = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -54,4 +55,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs
+export default Feedback

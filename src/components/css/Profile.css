@@ -81,3 +81,32 @@
     background-color: #88bdf2;
     color: #333;
 }
+
+@media screen and (max-width: 768px) {
+    .edit_btn, .save_btn, .cancel_btn {
+        width: 30%;
+        margin: 1rem 0 0 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .edit_btn, .save_btn, .cancel_btn {
+        width: 50%; 
+        margin: 1rem 0 0 1rem;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .profile-table td {
+        font-size: 0.9rem; 
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .profile-table td {
+        font-size: 0.8rem; /* Further reduce font size for even smaller screens */
+        width: 40%;
+    }
+}

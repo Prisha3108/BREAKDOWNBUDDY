@@ -1,11 +1,12 @@
 .form_box{
     width: 100%;
+    height: auto;
     padding-top: 1rem;
     padding-bottom: 2rem;
 }
 .fill_name{
     width: 47%;
-    height: 92vh;
+    height: auto;
     margin: 0rem 0 0 26rem;
     border-radius: 7px;
     border: 1px solid rgb(210, 208, 208);
@@ -15,7 +16,7 @@
 }
 .edit_other{
     width: 47%;
-    height: 22vh;
+    height: auto;
     margin: 2rem 0 0 26rem;
     border-radius: 7px;
     border: 1px solid rgb(210, 208, 208);
@@ -24,7 +25,7 @@
 }
 .edit_address{
     width: 50%;
-    height: 40vh;
+    height: auto;
     margin: 2rem 0 0 21rem;
     border-radius: 7px;
     border: 1px solid rgb(210, 208, 208);
@@ -58,23 +59,15 @@
 .edit_form{
     margin: 2rem 0 0 0;
 }
-.fullname, .pf_email, .vh_model, .vh_noplate, .vh_location{
-    width: 35%;
-    height: 4vh;
-    display: block;
-    margin: 0rem 0 0 2rem;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-.fuel_amt, .fuel_type{
+.all_labels{
     width: 55%;
-    height: 4vh;
+    height: auto;
     display: block;
-    margin: 0rem 0 0 2rem;
+    margin: 0.5rem 0 0 2rem;
     font-weight: bold;
     font-size: 0.9rem;
 }
-#fullname, #pf_email, #fuel_type, #fuel_amt, #vh_model, #vh_noplate, #vh_location{
+.all_inp_label{
     width: 75%;
     height: 4vh;
     margin: 0rem 0 1rem 2rem;
@@ -83,7 +76,7 @@
 }
 .add_note{
     width: 35%;
-    height: 4vh;
+    height: auto;
     display: block;
     margin: 1rem 0 0 2rem;
     font-weight: bold;
@@ -98,7 +91,8 @@
 }
 .submit_request{
     margin: 1rem 0 0 21rem;
-    height: 5vh;
+    height: auto;
+    padding: 2%;
     width: 30%;
     font-size: 1rem;
     color: rgb(97, 225, 83);
@@ -109,5 +103,5 @@
 }
 .submit_request:hover{
     background-color: rgb(97, 225, 83);
-    color: #333;
+    color: #fff;
 }
