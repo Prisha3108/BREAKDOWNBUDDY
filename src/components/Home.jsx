@@ -15,6 +15,7 @@ import heroImg06 from '../assests/fuel.webp';
 import heroImg07 from '../assests/key.webp'; // Specify the path to OtherImage3
 import heroVideo from '../assests/carvideo.mp4';
 import Footer from './Footer';
+import Reviews from './Reviews'; // Import the Reviews component
 
 function Homepage() {
     const settings = {
@@ -104,6 +105,18 @@ function Homepage() {
                     </Row>
                 </Container>
             </section>
+            {/* Include the Reviews component here */}
+            <section className="reviews-section">
+                <Container>
+                    <Row>
+                        <Col>
+                            <h2 className="reviews-heading">Customer Reviews</h2>
+                            <Reviews /> {/* Use the Reviews component here */}
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+
             {/* Include the Footer component */}
             <Footer />
         </>
