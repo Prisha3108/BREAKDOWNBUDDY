@@ -1,96 +1,236 @@
 /* Profile.css */
+.update_profile{
+    width: 100%;
+    height: auto;
+    background-color: #61a5c2;
+}
 .profile_page{
-    background-color: #ede9e999;
-    width: 64.8%;
-    height: 70vh;
-    margin: 0rem 0 0 13rem;
-    border-radius: 5px;
+    background-color: rgba(241, 241, 241, 0.5);    width: 80%;
+    height: 127vh;
+    margin: 3% 0 3% 9%;
+    border: 1px solid rgb(210, 208, 208);
+    border-radius: 3rem;
+    display: flex;
 }
-.profile-container {
-    max-width: 60%;
-    height: 65vh;
-    margin: 0 auto;
+.profile_left {
+    width: 80%;
+    background-color: #fff;
+    height: 101vh;
+    padding: 2rem;
+    margin: 4% 0 0 4.5%;
+    border: 1px solid rgb(210, 208, 208);
+    border-radius: 3rem;
 }
-.user_profile{
+.pf_pic {
+    width: 60%;
+    height: 40%;
+    margin-left: 18%;
+    border-radius: 50%; /* Make sure it's a circle */
+    overflow: hidden; /* Hide overflow to keep it circular */
+    position: relative; /* Position for absolute positioning of image */
+}
+.profile_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+    border-radius: 50%;
+}
+.pf_change{
+    margin-top: 4%;
+    font-size: 0.75rem;
     text-align: center;
-    padding-top: 1rem;
+}
+.my_profile{
+    text-align: center;
+    font-size: large;
+    background-color: #88bdf2;
+    text-align: left;
+    color: #fff;
+    margin-top: 9%;
+    margin-bottom: 9%;
+    padding: 1.5%;
+}
+.name_email{
+    margin-top: 6%;
+    border-bottom: 1px solid #d8d8d8;
+}
+.right_side{
+    width: 100%;
+    margin: 0 0 0 7%;
+}
+.profile_right {
+    width: 90%;
+    background-color: #fff;
+    height: 60vh;
+    margin: 8% 0 5% 0%;
+    border: 1px solid rgb(210, 208, 208);
+    border-radius: 3rem;
+}
+.pf_right_below{
+    width: 90%;
+    background-color: #fff;
+    height: 51vh;
+    margin: 4% 0 0 0%;
+    border: 1px solid rgb(210, 208, 208);
+    border-radius: 3rem;
+}
+#user_pf{
+    width: 82%;
+    margin: 6% 0 5% 8%;
+    font-size: large;
 } 
 .profile-table {
-    width: 100%;
+    width: 84%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    margin-left: 8%;
 }
-  
 .profile-table td {
     padding: 8px;
-    border: 1px solid #ccc;
-    text-align: center;
+    border-bottom: 1px solid #d8d8d8;
+    text-align: left;
     position: relative;
-    box-shadow: inset -0.1rem 0rem 0.15rem 0rem #00000040;
 }
 .profile-table td input {
     width: 80%;
     padding: 0.3rem;
     box-sizing: border-box;
 }
-
 .profile-table td:first-child {
     font-weight: bold;
     width: 9rem;
 }
+.password-error{
+    margin: 0 0 5% 8%;
+    color: red;
+}
+.toggle-password{
+    margin: 0% 0 0 2%;
+}
+.pf_btn{
+    height: 5vh;
+    width: 15%;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #fff;
+    border-radius: 0.31rem;
+}
+.update_passw{
+    margin: 2% 0 0 30%;
+    background-image: linear-gradient(to right, #61e153 0%, #a8e063  51%, #61e153  100%);
+    padding: 0.7rem 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;      
+    border: 1.5px solid;        
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+.update_passw:hover{
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
 
-.edit_btn{
-    margin: 1rem 0 0 16rem;
-    height: 5vh;
-    width: 15%;
-    font-size: 1rem;
+.edit_btn {
+    background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);
+    margin: 2% 0 0 39%;
+    padding: 0.7rem 2.5rem;
     font-weight: bold;
-    color: #88bdf2;
-    border-radius: 0.31rem;
-    border: 1.5px solid #88bdf2;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border: 1.5px solid;
+    border-radius: 10px;
 }
-.save_btn{
-    margin: 1rem 0 0 8rem;
-    height: 5vh;
-    width: 15%;
-    font-size: 1rem;
-    color: rgb(97, 225, 83);
-    border-radius: 0.31rem;
-    border: 1.5px solid rgb(97, 225, 83);
+.edit_btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+       
+.cancel_btn {
+    margin: 2% 0 0 15%;
+    background-image: linear-gradient(to right, #f03d3d 0%, #f86475  51%, #f03d3d  100%);
+    padding: 0.7rem 1.5rem;
     font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;   
+    border: 1.5px solid;         
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
 }
-.cancel_btn{
-    color: rgb(240, 61, 61);
-    border-radius: 0.31rem;
-    border: 1.5px solid rgb(240, 61, 61);
+.cancel_btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+       
+.save_btn {
+    margin: 2% 0 0 21%;
+    background-image: linear-gradient(to right, #61e153 0%, #a8e063  51%, #61e153  100%);
+    padding: 0.7rem 2.2rem;
     font-weight: bold;
-    margin: 1rem 0 0 9.5rem;
-    height: 5vh;
-    width: 15%;
-    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;      
+    border: 1.5px solid;        
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
 }
-.cancel_btn:hover{
-    background-color: rgb(240, 61, 61);
-    color: #333;
+
+.save_btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
 }
-.save_btn:hover{
+
+#save_btn:hover{
     background-color: rgb(97, 225, 83);
-    color: #333;
+    color: #fff;
 }
-.edit_btn:hover{
+#edit_btn:hover{
     background-color: #88bdf2;
-    color: #333;
+    color: #fff;
+}
+
+.curr_passw{
+    width: 55%;
+    height: auto;
+    display: block;
+    margin: 0.5rem 0 0 2.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.inp_curr_passw{
+    width: 75%;
+    height: 4vh;
+    margin: 0.2rem 0 1rem 2.5rem;
+    padding-left: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid rgb(210, 208, 208);
 }
 
 @media screen and (max-width: 768px) {
-    .edit_btn, .save_btn, .cancel_btn {
+    #edit_btn, #save_btn, #cancel_btn {
         width: 30%;
         margin: 1rem 0 0 1rem;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .edit_btn, .save_btn, .cancel_btn {
+    #edit_btn, #save_btn, #cancel_btn {
         width: 50%; 
         margin: 1rem 0 0 1rem;
     }

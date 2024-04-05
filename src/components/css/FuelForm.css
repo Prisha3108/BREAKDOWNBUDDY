@@ -1,3 +1,9 @@
+.batteryreq{
+    width: 100%;
+    display: inline-block;
+    /* margin: 0 0 0 10%; */
+    background-color: #61a5c2;
+}
 .form_box{
     width: 100%;
     height: auto;
@@ -70,10 +76,16 @@
 .all_inp_label{
     width: 75%;
     height: 4vh;
-    margin: 0rem 0 1rem 2rem;
+    margin: 0.2rem 0 1rem 2rem;
+    padding-left: 0.8rem;
     border-radius: 5px;
     border: 1px solid rgb(210, 208, 208);
 }
+#fuelType, #prefBatteryType, #currBatteryType{
+    width: 77.3%;
+    height: 4.5vh;
+}
+
 .add_note{
     width: 35%;
     height: auto;
@@ -85,7 +97,7 @@
 #add_note{
     width: 60%;
     height: 10vh;
-    margin: 0rem 0 1rem 2rem;
+    margin: 0.2rem 0 1rem 2rem;
     border-radius: 5px;
     border: 1px solid rgb(210, 208, 208);
 }

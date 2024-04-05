@@ -15,6 +15,8 @@ const BatteryForm = () => {
         add_note: ''
     });
 
+    const availableBatteryTypes = ["Lead Acid Battery", "VRLA Batteries", "Lithium-Ion Battery", "Sodium Ion Battery", "Solid-State Battery", "Nickel-Metal Hydride (NiMH) Battery", "Silver Calcium Battery"];
+
     const handleChange = (e) => {
         const { id, value } = e.target;
         setBatteryFormData(prevState => ({
@@ -56,7 +58,7 @@ const BatteryForm = () => {
     };
 
     return (
-        <div>
+        <div className='batteryreq'>
             <HorizontalBar
                 serviceLink={'/batteryrequest'} />
 
@@ -78,32 +80,42 @@ const BatteryForm = () => {
 
                         <div className="edit_form">
                             <label className='all_labels'>Full Name</label>
-                            <input type="text" className='all_inp_label' id='fullName' value={batteryFormData.fullName} onChange={handleChange} required />
+                            <input type="text" className='all_inp_label' placeholder='Enter your name' id='fullName' value={batteryFormData.fullName} onChange={handleChange} required />
 
                             <label className='all_labels'>Email ID</label>
-                            <input type="text" className='all_inp_label' id='email' value={batteryFormData.email} onChange={handleChange} required />
+                            <input type="text" className='all_inp_label' placeholder='Enter your email' id='email' value={batteryFormData.email} onChange={handleChange} required />
 
                             <label className='all_labels'>Current Battery Type</label>
-                            <input type="text" className='all_inp_label' id='currBatteryType' value={batteryFormData.currBatteryType} onChange={handleChange} required />
+                            <select id="currBatteryType" className='all_inp_label' value={batteryFormData.currBatteryType} onChange={handleChange} required>
+                                <option value="">Select Battery Type</option>
+                                {availableBatteryTypes.map((currBatteryType, index) => (
+                                    <option key={index} value={currBatteryType}>{currBatteryType}</option>
+                                ))}
+                            </select>
 
                             <label className='all_labels'>Preferred Battery Brand</label>
-                            <input type="text" className='all_inp_label' id='prefBatteryType' value={batteryFormData.prefBatteryType} onChange={handleChange} required />
+                            <select id="prefBatteryType" className='all_inp_label' value={batteryFormData.prefBatteryType} onChange={handleChange} required>
+                                <option value="">Select Battery Type</option>
+                                {availableBatteryTypes.map((prefBatteryType, index) => (
+                                    <option key={index} value={prefBatteryType}>{prefBatteryType}</option>
+                                ))}
+                            </select>
 
                             <label className='all_labels'>Model of Vehicle</label>
-                            <input type="text" className='all_inp_label' id='vehicleModel' value={batteryFormData.vehicleModel} onChange={handleChange} required />
+                            <input type="text" className='all_inp_label' placeholder='Enter your vehicle model' id='vehicleModel' value={batteryFormData.vehicleModel} onChange={handleChange} required />
 
                             <label className='all_labels'>License Plate Number</label>
-                            <input type="text" className='all_inp_label' id='licensePlateNumber' value={batteryFormData.licensePlateNumber} onChange={handleChange} required />
+                            <input type="text" className='all_inp_label' placeholder='Enter your vehicle license plate number' id='licensePlateNumber' value={batteryFormData.licensePlateNumber} onChange={handleChange} required />
 
                             <label className='all_labels'> Current Location</label>
-                            <input type="text" className='all_inp_label' id='currentLocation' value={batteryFormData.currentLocation} onChange={handleChange} required />
+                            <input type="text" className='all_inp_label' placeholder='Enter your current location' id='currentLocation' value={batteryFormData.currentLocation} onChange={handleChange} required />
 
                         </div>
                     </div>
 
                     <div className="edit_other">
                         <label className='add_note'>Additional Note </label>
-                        <input type="text" className='all_inp_label' id='add_note' value={batteryFormData.add_note} onChange={handleChange} />
+                        <input type="text" className='all_inp_label' placeholder='Enter message' id='add_note' value={batteryFormData.add_note} onChange={handleChange} />
                     </div>
                 </form>
             </div>

@@ -1,20 +1,26 @@
-import React from 'react'
-import '../css/HorizontalBar.css'
-import { Link  } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FiSettings, FiUser, FiClock, FiMessageSquare, FiLogOut } from 'react-icons/fi'; // Import icons from react-icons
+import '../css/HorizontalBar.css';
 
-const HorizontalBar = ({ serviceLink}) => {
+const HorizontalBar = ({ serviceLink }) => {
   return (
     <div className='horizontal_bar'>
-    <div className='all_buttons'>
-      <Link to={serviceLink} type='button' className='bar_button'> Service Form </Link >
-      <Link to={'/profile'} type='button' className='bar_button'> Profile </Link >
-      <Link to={'/history'} type='button' className='bar_button'> History </Link >
-      <Link to={'/feedback'} type='button' className='bar_button'> Feedback </Link >
-      <Link to={'/'} type='button' className='bar_button'> Signout </Link >
+      <div className='all_buttons'>
 
+        <Link to={serviceLink} className='bar_button'><FiSettings /> 
+        <p> Service Form </p> </Link>
+        <Link to={'/profile'} className='bar_button'><FiUser /> 
+        <p> Profile </p> </Link>
+        <Link to={'/history'} className='bar_button'><FiClock /> 
+        <p> History </p> </Link>
+        <Link to={'/feedback'} className='bar_button'><FiMessageSquare /> 
+        <p> Feedback </p> </Link>
+        <Link to={'/'} className='bar_button'><FiLogOut /> 
+        <p> Signout </p> </Link>
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default HorizontalBar
+export default HorizontalBar;
