@@ -268,4 +268,25 @@
 .hero__img-box {
     padding-top: 2rem;
 }
+/* Styling for the Customer Reviews section */
+.reviews-section {
+    text-align: center; /* Center align the section content */
+}
+
+.reviews-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #007bff; /* Heading color */
+    margin-bottom: 20px; /* Add space below the heading */
+}
+
+.reviews-section h2::after {
+    content: ''; /* Add a decorative element */
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: #007bff; /* Line color */
+    margin: 0 auto; /* Center align the line */
+    margin-top: 10px; /* Add space above the line */
+}
 

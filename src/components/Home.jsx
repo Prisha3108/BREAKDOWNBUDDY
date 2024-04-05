@@ -3,24 +3,25 @@ import { Container, Row, Col } from 'reactstrap';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { FaClock, FaUserTie, FaHandHoldingUsd, FaRegLightbulb } from 'react-icons/fa'; // Import icons
-import Navbar from './Navbar'; // Assuming Navbar is defined
+import { FaClock, FaUserTie, FaHandHoldingUsd, FaRegLightbulb } from 'react-icons/fa';
+import Navbar from './Navbar';
 import './css/Homepage.css';
 import heroImg from '../assests/Unknown.jpeg';
 import heroImg02 from '../assests/VistaCarService.jpg';
-import heroImg03 from '../assests/tow.webp'; // Specify the path to OtherImage1
-import heroImg04 from '../assests/Tyre.webp'; // Specify the path to OtherImage2
+import heroImg03 from '../assests/tow.webp';
+import heroImg04 from '../assests/Tyre.webp';
 import heroImg05 from '../assests/battery.webp';
 import heroImg06 from '../assests/fuel.webp';
-import heroImg07 from '../assests/key.webp'; // Specify the path to OtherImage3
+import heroImg07 from '../assests/key.webp';
 import heroVideo from '../assests/carvideo.mp4';
+import Reviews from './Reviews';
 
 function Homepage() {
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3, // Display three slides at a time
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
@@ -99,6 +100,16 @@ function Homepage() {
                                     </div>
                                 </div>
                             </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+            <section className="reviews-section">
+                <Container>
+                    <Row className="align-items-center"> {/* Added class for vertical alignment */}
+                        <Col>
+                            <h2 className="text-center">Customer Reviews</h2> {/* Centered heading */}
+                            <Reviews /> {/* Use the Reviews component here */}
                         </Col>
                     </Row>
                 </Container>
