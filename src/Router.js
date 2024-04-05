@@ -13,6 +13,7 @@ import Feedback from './components/Customer/Feedback';
 import TyreForm from './components/Customer/TyreForm';
 import TowForm from './components/Customer/TowForm';
 import BatteryForm from './components/Customer/BatteryForm';
+import { LoginRegister } from './components/LoginRegister';
 
 function AppRouter() {
     return (
@@ -30,6 +31,7 @@ function AppRouter() {
             <Route path="/tyrerequest" element={<TyreForm />} />
             <Route path="/towrequest" element={<TowForm />} />
             <Route path="/batteryrequest" element={<BatteryForm />} />
+            <Route path="/LoginRegister" element={<LoginRegister />} />
         </Routes>
     );
 }
