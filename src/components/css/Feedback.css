@@ -1,54 +1,75 @@
+.feedbackreq{
+    width: 100%;
+    display: inline-block;
+    background-color: #7837a7;
+    /* background-color: #00509d; */
+}
 .feedback_image{
-    width: 110%;
-    height: 75%;
-    object-fit: cover;
-    margin: 2.5rem 0 0 0rem;
+    width: 100%;
+    height: 100%;
+    margin-left: 30%;
 }
-.review_name, .review_email{
-    margin: 0rem 0 0 6rem;
-    text-align: center;
-}
-.review_msg{
-    margin: 2rem 0 0 6rem;
-    text-align: center;
-}
-#review_name{
-    margin: 5rem 0 0 3.3rem;
-    height: 3vh;
-    width: 44%;
-}
-#review_email{
-    margin: 1rem 0 0 3.57rem;
-    height: 3vh;
-    width: 44%;
+.review{
+    margin: 0rem 0 0 3rem;
 }
 #review_msg{
+    margin: 2rem 0 0 3rem;
+}
+.review_name{
+    margin: 4rem 0 0.7rem 3.3rem;
+    height: 3vh;
+    width: 55%;
+}
+.review_email{
+    margin: 1rem 0 0.7rem 3.57rem;
+    height: 3vh;
+    width: 55%;
+}
+.review_msg{
     margin: 1rem 0 0 2.3rem;
-    width: 44.5%;
+    width: 55%;
     height: 10vh;
 }
 .customer_msg{
     display: flex;
 }
 .feedback_form{
-    background-color: #ede9e999;
-    width: 64.8%;
-    height: 60vh;
-    margin: 0rem 0 0 13rem;
+    width: 100%;
+    height: 67vh;
+    margin: 3rem 0 3rem 0rem;
     display: flex;
-    border-radius: 5px;
+    border-radius: 3rem;
+}
+.form_fb{
+    background-color: #fff;
+    width: 36%;
+    height: 52vh;
+    margin: 5% 0 0 18%;
+    border-radius: 3rem;
+}
+.fb_container{
+    background-color: #fff;
+    width: 80%;
+    height: 52vh;
+    margin: 10% 0 0 13%;
+    border-radius: 3rem;
 }
 .review_submit {
-    margin: 2.5rem 0 0 13rem;
-    width: 26%;
-    padding: 2.2%;
-    background-color: #88bdf2;
-    border: #88bdf2;
-    border-radius: 5px;
-    font-size: 0.9rem;
+    background-image: linear-gradient(to right, #7837a7 0%, #a044ff  51%, #6a3093  100%);
+    margin: 7% 0 0 35%;
+    padding: 0.7rem 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border: 1.5px solid;
+    border-radius: 10px;
 }
-.review_submit:hover{
-    background-color: #705efb;
+.review_submit:hover {
+    background-position: right center; /* change the direction of the change here */
     color: #fff;
+    text-decoration: none;
 }
-  

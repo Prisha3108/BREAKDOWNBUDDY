@@ -3,11 +3,13 @@
     width: 100%;
     height: auto;
     background-color: #61a5c2;
+    padding-bottom: 3%;
 }
 .profile_page{
-    background-color: rgba(241, 241, 241, 0.5);    width: 80%;
-    height: 127vh;
-    margin: 3% 0 3% 9%;
+    background-color: rgba(241, 241, 241, 0.5);
+    width: 80%;
+    height: 131vh;
+    margin: 3% 0 0% 9%;
     border: 1px solid rgb(210, 208, 208);
     border-radius: 3rem;
     display: flex;
@@ -17,7 +19,7 @@
     background-color: #fff;
     height: 101vh;
     padding: 2rem;
-    margin: 4% 0 0 4.5%;
+    margin: 2.8% 0 0 4.5%;
     border: 1px solid rgb(210, 208, 208);
     border-radius: 3rem;
 }
@@ -61,15 +63,15 @@
 .profile_right {
     width: 90%;
     background-color: #fff;
-    height: 60vh;
-    margin: 8% 0 5% 0%;
+    height: 66vh;
+    margin: 6% 0 5% 0%;
     border: 1px solid rgb(210, 208, 208);
     border-radius: 3rem;
 }
 .pf_right_below{
     width: 90%;
     background-color: #fff;
-    height: 51vh;
+    height: 50vh;
     margin: 4% 0 0 0%;
     border: 1px solid rgb(210, 208, 208);
     border-radius: 3rem;
@@ -101,7 +103,7 @@
     width: 9rem;
 }
 .password-error{
-    margin: 0 0 5% 8%;
+    margin: 0 0 3% 8%;
     color: red;
 }
 .toggle-password{
@@ -189,20 +191,10 @@
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
 }
-
 .save_btn:hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
-}
-
-#save_btn:hover{
-    background-color: rgb(97, 225, 83);
-    color: #fff;
-}
-#edit_btn:hover{
-    background-color: #88bdf2;
-    color: #fff;
 }
 
 .curr_passw{
@@ -223,14 +215,14 @@
 }
 
 @media screen and (max-width: 768px) {
-    #edit_btn, #save_btn, #cancel_btn {
+    .edit_btn, .save_btn, .cancel_btn {
         width: 30%;
         margin: 1rem 0 0 1rem;
     }
 }
 
 @media screen and (max-width: 576px) {
-    #edit_btn, #save_btn, #cancel_btn {
+    .edit_btn, .save_btn, .cancel_btn {
         width: 50%; 
         margin: 1rem 0 0 1rem;
     }

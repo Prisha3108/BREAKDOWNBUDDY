@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { FaUser, FaEnvelope, FaCar, FaStickyNote } from 'react-icons/fa';
 import HorizontalBar from './HorizontalBar';
 import '../css/FuelForm.css'; // Assuming you have a CSS file named TyreForm.css for styling
+import { GiCarWheel } from "react-icons/gi";
+import { IoLocationSharp } from "react-icons/io5";
+import license from '../../assests/license-plate.png'
 
 const TyreForm = () => {
     const [tyreFormData, setTyreFormData] = useState({
@@ -53,7 +57,7 @@ const TyreForm = () => {
     };
 
     return (
-        <div>
+        <div className='tyrereq'>
             <HorizontalBar serviceLink={'/tyrerequest'} />
             <div className="form_box">
                 <form onSubmit={handleSubmit}>
@@ -69,31 +73,32 @@ const TyreForm = () => {
                         </div>
                         <div className="hz_line"></div>
                         <div className="edit_form">
-                            <label className='all_labels'>Full Name</label>
-                            <input type="text" className='all_inp_label' id="fullName" value={tyreFormData.fullName} onChange={handleChange} required />
+                            <label className='all_labels'> <FaUser /> Full Name </label>
+                            <input type="text" className='all_inp_label' id="fullName" placeholder='Enter your name' value={tyreFormData.fullName} onChange={handleChange} required />
 
-                            <label className='all_labels'>Email ID</label>
-                            <input type="text" className='all_inp_label' id="email" value={tyreFormData.email} onChange={handleChange} required />
+                            <label className='all_labels'> <FaEnvelope /> Email ID </label>
+                            <input type="email" className='all_inp_label' id="email" placeholder='Enter your email' value={tyreFormData.email} onChange={handleChange} required />
 
-                            <label className='all_labels'>No. of tyres to be replaced</label>
-                            <input type="number" className='all_inp_label' id="numTyreReq" value={tyreFormData.numTyreReq} onChange={handleChange} required />
+                            <label className='all_labels'> <GiCarWheel /> No. of tyres to be replaced </label>
+                            <input type="number" className='all_inp_label' id="numTyreReq" placeholder='Enter no. of tyre' value={tyreFormData.numTyreReq} onChange={handleChange} required />
 
-                            <label className='all_labels'>Model of Vehicle</label>
-                            <input type="text" className='all_inp_label' id="vehicleModel" value={tyreFormData.vehicleModel} onChange={handleChange} required />
+                            <label className='all_labels'> <FaCar /> Model of Vehicle </label>
+                            <input type="text" className='all_inp_label' id="vehicleModel" placeholder='Enter your vehicle model' value={tyreFormData.vehicleModel} onChange={handleChange} required />
 
-                            <label className='all_labels'>License Plate Number</label>
-                            <input type="text" className='all_inp_label' id="licensePlateNumber" value={tyreFormData.licensePlateNumber} onChange={handleChange} required />
+                            <label className='all_labels' id='lpn'> <img src={license} alt="License-Plate" className="license" /> License Plate Number </label>
+                            <input type="text" className='all_inp_label' id="licensePlateNumber" placeholder='Enter your vehicle license plate number' value={tyreFormData.licensePlateNumber} onChange={handleChange} required />
 
-                            <label className='all_labels'> Current Location</label>
-                            <input type="text" className='all_inp_label' id="currentLocation" value={tyreFormData.currentLocation} onChange={handleChange} required />
+                            <label className='all_labels'> <IoLocationSharp /> Current Location </label>
+                            <input type="text" className='all_inp_label' id="currentLocation" placeholder='Enter your current location' value={tyreFormData.currentLocation} onChange={handleChange} required />
                         </div>
                     </div>
                     <div className="edit_other">
-                        <label className='add_note'>Additional Note </label>
-                        <input type="text" className='all_inp_label' id="add_note" value={tyreFormData.add_note} onChange={handleChange} />
+                        <label className='add_note'> <FaStickyNote />  Additional Note </label>
+                        <input type="text" className='all_inp_label' id="add_note" placeholder='Enter message' value={tyreFormData.add_note} onChange={handleChange} />
                     </div>
                 </form>
             </div>
+            
         </div>
     );
 }

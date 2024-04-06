@@ -1,14 +1,13 @@
-.batteryreq{
+.batteryreq, .fuelreq, .towreq, .tyrereq{
     width: 100%;
     display: inline-block;
-    /* margin: 0 0 0 10%; */
     background-color: #61a5c2;
 }
 .form_box{
     width: 100%;
     height: auto;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-top: 2.3rem;
+    padding-bottom: 2.3rem;
 }
 .fill_name{
     width: 47%;
@@ -16,9 +15,16 @@
     margin: 0rem 0 0 26rem;
     border-radius: 7px;
     border: 1px solid rgb(210, 208, 208);
-    background-color: #fff;
+    background-color: rgba(255,255,255);
     box-shadow: inset 0rem 0.1rem 0.1rem 0rem #00000040;
     
+}
+#lpn{
+    display: flex;
+}
+.license{
+    width: 6%;
+    margin-right: 1%;
 }
 .edit_other{
     width: 47%;
@@ -101,19 +107,22 @@
     border-radius: 5px;
     border: 1px solid rgb(210, 208, 208);
 }
-.submit_request{
-    margin: 1rem 0 0 21rem;
-    height: auto;
-    padding: 2%;
-    width: 30%;
-    font-size: 1rem;
-    color: rgb(97, 225, 83);
-    border-radius: 0.31rem;
-    border: 1.5px solid rgb(97, 225, 83);
+.submit_request {
+    margin: 1rem 0 0 18rem;
+    background-image: linear-gradient(to right, #61e153 0%, #a8e063  51%, #61e153  100%);
+    padding: 0.7rem 2.6rem;
     font-weight: bold;
-    background-color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;      
+    border: 1.5px solid;        
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
 }
-.submit_request:hover{
-    background-color: rgb(97, 225, 83);
+.submit_request:hover {
+    background-position: right center; /* change the direction of the change here */
     color: #fff;
+    text-decoration: none;
 }

@@ -4,6 +4,9 @@ import '../css/Feedback.css'
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import img from '../../assests/feedback.png';
+import Lottie from 'lottie-react';
+import animationData from '../../assests/FBAnimation.json'
+
 
 const Feedback = () => {
   const form = useRef();
@@ -26,30 +29,34 @@ const Feedback = () => {
   };
 
   return (
-    <div>
+    <div className='feedbackreq'>
       <HorizontalBar />
       <div className="feedback_form">
         <div className="fd_img">
-          <img src={img} alt="Feedback Image" className="feedback_image" />
+
+          <Lottie animationData={animationData} className="feedback_image" />
         </div>
-        <form ref={form} onSubmit={sendEmail} className='give_feedback'>
-          <div className="customer_name">
-            <label className='review_name'>Name: </label>
-            <input type="text" name="from_name" id='review_name' placeholder='Enter your name' required />
-          </div>
 
-          <div className="customer_email">
-            <label className='review_email'>Email: </label>
-            <input type="email" name="from_name" id='review_email' placeholder='Enter your email' required />
-          </div>
+        <div className="form_fb">
+          <form ref={form} onSubmit={sendEmail} className='give_feedback'>
+              <div className="customer_name">
+                <label className='review'>Name: </label>
+                <input type="text" name="from_name" className='review_name' placeholder='Enter your name' required />
+              </div>
 
-          <div className="customer_msg">
-            <label className='review_msg'>Message: </label>
-            <textarea name="message" id='review_msg' placeholder='Enter your message' required />
-          </div>
+              <div className="customer_email">
+                <label className='review'>Email: </label>
+                <input type="email" name="from_name" className='review_email' placeholder='Enter your email' required />
+              </div>
 
-          <button type="submit" value="Send" className='review_submit'>Submit</button>
-        </form>
+              <div className="customer_msg">
+                <label className='review' id='review_msg'>Message: </label>
+                <textarea name="message" className='review_msg' placeholder='Enter your message' required />
+              </div>
+
+              <button type="submit" value="Send" className='review_submit'>Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   );
