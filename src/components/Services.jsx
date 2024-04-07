@@ -7,6 +7,7 @@ import fuelImg from '../assests/fuelimage.jpeg';
 import batteryImg from '../assests/batteryimage.jpeg'; // Update the path to the battery image
 import towImg from '../assests/towimage.jpeg';
 import tyreImg from '../assests/tyreimage.webp';
+import Footer from './Footer';
 
 const servicesData = [
     {
@@ -48,6 +49,10 @@ const Services = () => {
                     <ServiceCard key={index} service={service} />
                 ))}
             </div>
+            <div className="footer">
+            <Footer />
+            </div>
+            
         </div>
     );
 };

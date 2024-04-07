@@ -16,6 +16,8 @@ import heroImg07 from '../assests/key.webp'; // Specify the path to OtherImage3
 import heroVideo from '../assests/carvideo.mp4';
 import Footer from './Footer';
 import Reviews from './Reviews'; // Import the Reviews component
+import Hero from './Hero';
+import About from './About';
 
 function Homepage() {
     const settings = {
@@ -38,29 +40,9 @@ function Homepage() {
 
     return (
         <>
-            <section>
-                <Container fluid className="home-page-container hero-container">
-                    <Row>
-                        <Col lg='6'>
-                            <div className="hero__content">
-                                <div className="hero__subtitle d-flex align-items-center">
-                                </div>
-                                <h1 className="fade-in-text">Welcome to Revive Roadside Assistance </h1>
-                                <p>
-                                    At Revive, we understand that car troubles can happen when you least expect them. That's why we're here to provide reliable and efficient roadside assistance whenever you need it. Whether you've experienced a flat tire, battery failure, or any other roadside emergency, our team of professionals is just a click away.
-                                </p>
-                            </div>
-                        </Col>
-                        <Col lg='6'>
-                            <div className="hero__img-box">
-                                <img src={heroImg} alt="" />
-                                <video src={heroVideo} alt="" autoPlay muted loop controls />
-                                <img src={heroImg02} alt="" />
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
+            <Hero/>
+            <About/>
+            
             <section>
                 <Container>
                     <Row>

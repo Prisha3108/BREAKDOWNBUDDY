@@ -1,0 +1,117 @@
+.hero-section {
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+}
+
+.text-section {
+    width: 50%;
+    padding: 0 24px;
+}
+
+.text-headline {
+    margin-bottom: 12px;
+    color: rgb(77, 75, 75);
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.text-title {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.text-description {
+    margin: 24px 0;
+    color: rgb(77, 75, 75);
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.text-appointment-btn {
+    padding: 14px 24px;
+    color: white;
+    border: none;
+    border-radius: 28px;
+    outline: none;
+    background-color: #1A8EFD;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.text-appointment-btn:hover {
+    background-color: #156ab5;
+}
+
+.text-stats {
+    margin-top: 32px;
+    display: flex;
+    gap: 48px;
+}
+
+.text-stats-container {
+    text-align: center;
+}
+
+.text-stats-container p {
+    color: rgb(77, 75, 75);
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    letter-spacing: .7px;
+}
+
+.text-stats-container p:first-child {
+    margin-bottom: 8px;
+    color: #1A8EFD;
+    font-family: 'Rubik', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.hero-image-section {
+    width: 45%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.hero-image1 {
+    width: 100%;
+    height: auto;
+}
+
+.scroll-up {
+    width: 45px;
+    height: 45px;
+    display: none;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    border: 3px solid white;
+    border-radius: 50%;
+    background-color: #1A8EFD;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    font-size: 24px;
+    z-index: 20;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-up.show-scroll {
+    display: flex;
+}
+
+.scroll-up:hover {
+    background-color: #156ab5;
+}
