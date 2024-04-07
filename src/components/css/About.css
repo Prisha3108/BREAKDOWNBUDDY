@@ -34,7 +34,7 @@
     position: absolute;
     width: 75%;
     height: 4px;
-    background-color: #9D2553;
+    background-color: #62a1f9;
     border-radius: 8px;
     left: 0;
     bottom: -12px;
@@ -73,7 +73,7 @@
     line-height: 1.6rem;
 }
 .fa-icon {
-    color: #9D2553;
+    color: #62a1f9;
 }
 /* Responsive */
 @media screen and (max-width: 1000px) {

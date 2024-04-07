@@ -18,6 +18,7 @@ import Footer from './Footer';
 import Reviews from './Reviews'; // Import the Reviews component
 import Hero from './Hero';
 import About from './About';
+import Info from './Info';
 
 function Homepage() {
     const settings = {
@@ -42,25 +43,12 @@ function Homepage() {
         <>
             <Hero/>
             <About/>
+            <Info/>
             
             <section>
                 <Container>
                     <Row>
-                        <Col lg='3'>
-                            <div className="services-list">
-                                <p className="services-heading">Our Services</p>
-                                <Slider {...settings}>
-                                    {services.map((service, index) => (
-                                        <div key={index} className="service-item">
-                                            <div className="service-content">
-                                                <img src={service.image} alt={service.name} />
-                                                <p className="service-name">{service.name}</p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </Slider>
-                            </div>
-                        </Col>
+                        
                         <Col lg='9'>
                             <div className="why-choose-us">
                                 <h2 className="choose-us-heading">Why Choose Us?</h2>
