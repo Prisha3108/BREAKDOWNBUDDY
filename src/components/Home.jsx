@@ -100,7 +100,7 @@ function Homepage() {
             </section>
 
             {/* Include the Footer component */}
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 }
