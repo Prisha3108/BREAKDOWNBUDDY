@@ -9,7 +9,8 @@ const TyreDetailsSchema = new mongoose.Schema({
   vehicleModel: String,
   licensePlateNumber: String,
   currentLocation: String,
-  additionalNote: String,
+  add_note: String,
+  status: String
 },
 {timestamps: true}
 );

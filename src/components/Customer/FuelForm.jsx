@@ -5,6 +5,7 @@ import { FaUser, FaEnvelope, FaCar, FaStickyNote } from 'react-icons/fa';
 import { IoLocationSharp } from "react-icons/io5";
 import { BsFillFuelPumpFill } from "react-icons/bs";
 import license from '../../assests/license-plate.png'
+import axios from 'axios'; // Import Axios
 
 const FuelForm = () => {
   const [fuelFormData, setFuelFormData] = useState({
@@ -31,14 +32,12 @@ const FuelForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8000/submitFuelForm', {
-        method: 'POST',
+      const response = await axios.post('http://localhost:8000/fuel/submitFuelForm', fuelFormData, {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(fuelFormData)
       });
-      if (response.ok) {
+      if (response.status === 200) {
         console.log('Form data submitted successfully');
         alert('Form data submitted successfully');
         // clear form data
@@ -110,7 +109,7 @@ const FuelForm = () => {
           </div>
           <div className="edit_other">
             <label className='add_note'> <FaStickyNote /> Additional Note </label>
-            <input type="text" className='all_inp_label' id='add_note' placeholder='Enter message'  value={fuelFormData.additionalNote} onChange={handleChange} />
+            <input type="text" className='all_inp_label' id='add_note' placeholder='Enter message'  value={fuelFormData.add_note} onChange={handleChange} />
           </div>
         </form>
       </div>

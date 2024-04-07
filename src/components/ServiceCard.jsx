@@ -7,7 +7,7 @@ const ServiceCard = ({ service }) => {
     const navigate = useNavigate();
 
     const handleRequest = () => {
-        // Navigate to the request page when the REQUEST button is clicked
+        // Navigate to the request page wahen the REQUEST button is clicked
         navigate(requestLink);
     };
 

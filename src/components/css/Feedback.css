@@ -3,6 +3,7 @@
     display: inline-block;
     background-color: #7837a7;
     /* background-color: #00509d; */
+    position: relative;
 }
 .feedback_image{
     width: 100%;

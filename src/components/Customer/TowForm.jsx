@@ -5,7 +5,8 @@ import { FaUser, FaEnvelope, FaCar, FaStickyNote } from 'react-icons/fa';
 import { IoLocationSharp } from "react-icons/io5";
 import { GiTowTruck } from "react-icons/gi";
 import { FaMapLocationDot } from "react-icons/fa6";
-import license from '../../assests/license-plate.png'
+import license from '../../assests/license-plate.png';
+import axios from 'axios'; // Import Axios
 
 const TowForm = () => {
     const [formData, setFormData] = useState({
@@ -30,14 +31,12 @@ const TowForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8000/submitForm', {
-                method: 'POST',
+            const response = await axios.post('http://localhost:8000/tow/submitForm', formData, {
                 headers: {
                     'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
+                }
             });
-            if (response.ok) {
+            if (response.status === 200) {
                 console.log('Form data submitted successfully');
                 alert('Form data submitted successfully');
                 // clear form data
@@ -49,9 +48,8 @@ const TowForm = () => {
                     towReason: '',
                     currentLocation: '',
                     destination: '',
-                    additionalNote: ''
+                    add_note: ''
                 });
-    
             } else {
                 console.error('Failed to submit form data');
             }
@@ -97,7 +95,7 @@ const TowForm = () => {
                     </div>
                     <div className="edit_other">
                         <label className='add_note'> <FaStickyNote /> Additional Note </label>
-                        <input type="text" className='all_inp_label' id='add_note' placeholder='Enter message' value={formData.additionalNote} onChange={handleChange} />
+                        <input type="text" className='all_inp_label' id='add_note' placeholder='Enter message' value={formData.add_note} onChange={handleChange} />
                     </div>
                 </form>
             </div>

@@ -10,7 +10,8 @@ const FuelDetailsSchema = new mongoose.Schema({
   fuelAmount: Number,
   fuelType: String,
   currentLocation: String,
-  additionalNote: String,
+  add_note: String,
+  status: String
 },
 {timestamps: true}
 );

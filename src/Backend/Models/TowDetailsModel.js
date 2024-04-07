@@ -10,7 +10,8 @@ const TowDetailsSchema = new mongoose.Schema({
   towReason: String,
   currentLocation: String,
   destination: String,
-  additionalNote: String,
+  add_note: String,
+  status: String
 },
 {timestamps: true}
 );

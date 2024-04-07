@@ -1,0 +1,70 @@
+.tow-reply-container {
+    margin: 2%;
+  }
+.tow-reply-container h2{
+  text-align: center;
+}
+.tow-request-table {
+    width: 100%;
+    border: 1.5px solid #ddd;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+}
+.tow-request-table th, .tow-request-table td {
+    padding: 0.6rem;
+    text-align: left;
+    border: none;
+    color: #3358a0;
+    height: 7vh; 
+    vertical-align: middle;
+}
+  
+.tow-request-table th {
+    background-color: #3358a0;
+    color: #fff;
+    font-weight: bold;
+}
+  
+.tow-request-table tr:hover {
+    background-color: #f2f2f2;
+}
+
+.approve_btn{
+    background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);
+    margin: 2% 0 0 5%;
+    padding: 0.6rem 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border: 1.5px solid;
+    border-radius: 10px;
+}
+.approve_btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.deny_btn{
+    margin: 2% 0 0 5%;
+    background-image: linear-gradient(to right, #f03d3d 0%, #f86475  51%, #f03d3d  100%);
+    padding: 0.6rem 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;   
+    border: 1.5px solid;         
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+.deny_btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}

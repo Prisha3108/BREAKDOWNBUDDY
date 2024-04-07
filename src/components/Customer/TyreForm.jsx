@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { FaUser, FaEnvelope, FaCar, FaStickyNote } from 'react-icons/fa';
 import HorizontalBar from './HorizontalBar';
-import '../css/FuelForm.css'; // Assuming you have a CSS file named TyreForm.css for styling
+import '../css/FuelForm.css';
 import { GiCarWheel } from "react-icons/gi";
 import { IoLocationSharp } from "react-icons/io5";
-import license from '../../assests/license-plate.png'
+import license from '../../assests/license-plate.png';
+import axios from 'axios'; // Import Axios
 
 const TyreForm = () => {
     const [tyreFormData, setTyreFormData] = useState({
@@ -28,14 +29,12 @@ const TyreForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8000/submitTyreForm', {
-                method: 'POST',
+            const response = await axios.post('http://localhost:8000/tyre/submitTyreForm', tyreFormData, {
                 headers: {
                     'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(tyreFormData)
+                }
             });
-            if (response.ok) {
+            if (response.status === 200) {
                 console.log('Form data submitted successfully');
                 alert('Form data submitted successfully');
                 // clear form data
@@ -98,7 +97,6 @@ const TyreForm = () => {
                     </div>
                 </form>
             </div>
-            
         </div>
     );
 }

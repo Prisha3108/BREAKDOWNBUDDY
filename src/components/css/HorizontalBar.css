@@ -1,17 +1,20 @@
-.horizontal_bar{
+.horizontal_bar {
     width: 100%;
     border-top: 1px solid rgb(127, 127, 127);
     background-color: #000;
-}
-.all_buttons{
+  }
+  
+  .all_buttons {
     display: flex;
     margin: 0 0 0 10%;
-}
-.bar_button p{
+  }
+  
+  .bar_button p {
     margin: 0 0 0.2rem 0.5rem;
     text-align: center;
-}
-.bar_button{
+  }
+  
+  .bar_button {
     width: 16%;
     padding: 0.9%;
     display: flex;
@@ -21,14 +24,41 @@
     text-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
     border-radius: 0.5rem;
     color: #fff;
-}
-.bar_button:hover,
-.bar_button:active,
-.bar_button:focus{
+    position: relative;
+  }
+  
+  .bar_button:hover,
+  .bar_button:active,
+  .bar_button:focus {
     background-color: #88bdf2;
     color: #000;
-}
-.active-link {
+  }
+  
+  .active-link {
     background-color: #88bdf2;
     color: #000;
-}
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    z-index: 999; /* Ensure higher than other content */
+  }
+  
+  
+  .dropdown-link {
+    display: block;
+    padding: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .dropdown-link:hover {
+    background-color: #88bdf2;
+  }
+  
