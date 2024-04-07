@@ -42,8 +42,9 @@ function Hero() {
           Welcome to Revive Car Assistance
           </h2>
           <p className="text-descritpion">
-          When your car encounters trouble on the road, it's not just an inconvenience – it can disrupt your entire day. At Revive, we understand the frustration and stress that comes with unexpected car issues. That's why we're here to offer reliable, efficient, and hassle-free assistance whenever you need it.
-          </p>
+          When your car encounters trouble on the road, it's not just an inconvenience – it can disrupt your entire day. At Revive, we understand the frustration and stress that comes with unexpected car issues. That's why we're here to offer reliable, efficient, and hassle-free assistance whenever you need it.</p>
+          <p className="text-descritpion">
+          At Revive, we're more than just a car assistance company – we're your trusted partners in keeping your vehicle running smoothly. Our team consists of skilled technicians, experienced roadside assistance professionals, and dedicated customer service representatives who are committed to delivering excellence in everything we do.</p>       
           <button
             className="text-appointment-btn"
             type="button"
