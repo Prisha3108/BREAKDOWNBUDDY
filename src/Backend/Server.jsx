@@ -8,6 +8,8 @@ const towRoutes = require("./Routes/TowRoute");
 const fuelRoutes = require("./Routes/FuelRoute");
 const tyreRoutes = require("./Routes/TyreRoute");
 const batteryRoutes = require("./Routes/BatteryRoute");
+const authRoute = require('./Routes/userauthRoute');
+const mechauthRoute = require('./Routes/MechauthRoute');
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -29,6 +31,8 @@ app.use("/tow", towRoutes);
 app.use("/fuel", fuelRoutes);
 app.use("/tyre", tyreRoutes);
 app.use("/battery", batteryRoutes);
+app.use("/auth", authRoute);
+app.use("/mechauth", mechauthRoute);
 
 app.listen(8000, () => {
   console.log(`Server is running on port 8000`);

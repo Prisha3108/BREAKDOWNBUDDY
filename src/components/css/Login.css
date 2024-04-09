@@ -1,0 +1,70 @@
+.login_page{
+    width: 100%;
+    margin: 0;
+    background-color: #825757;
+}
+.login_container  h2{
+    color: #fff;
+    margin: 0;
+    padding-top: 2%;
+}
+.login_container {
+    width: 100%;
+    background: linear-gradient(rgb(99, 219, 255), rgb(255, 255, 255));
+    margin-top: 0 ;
+    padding-bottom: 5%;
+    text-align: center;
+}
+.login_form {
+    background-color: #fff;
+    height: 38vh;
+    width: 33%;
+    margin: 2% 0 0 34%;
+    padding-top: 3%;
+    border-radius: 4rem;
+    box-shadow:
+    30px 0px 35px -10px rgba(131, 167, 195, 0.5), /* right shadow */
+    0px 30px 35px -10px rgba(131, 167, 195, 0.5), /* bottom shadow */
+    inset -20px -10px 35px 5px rgba(99, 219, 255, 0.5), /* right inside shadow */
+    inset -40px -40px 55px -10px rgba(99, 219, 255, 0.5); 
+}
+
+.login_input {
+    width: 65%;
+    margin: 0% 0 4% 0;
+    padding: 5px;
+    border-radius: 0.3rem;
+    border-bottom: 2px solid rgba(131, 167, 195, 0.8);
+    border-left: none;
+    border-right: none; 
+    border-top: none;
+}
+  
+.login_btn {
+    width: 40%;
+    padding: 10px;
+    background-color: rgb(99, 219, 255);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 6%;
+}
+  
+.login_btn:hover {
+    background-color: rgb(5, 180, 233); 
+}
+
+.toregister {
+    display: flex;
+    align-items: center;
+    margin: 4% 0 0 41%;
+}
+.toregister p{
+    color: rgb(128, 127, 127);
+}
+.register_now{
+    margin-left: 1%;
+    color: rgb(5, 180, 233);
+    font-weight: bold;
+    text-decoration: none;
+}

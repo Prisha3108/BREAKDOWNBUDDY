@@ -1,20 +1,14 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FaClock, FaUserTie, FaHandHoldingUsd, FaRegLightbulb } from 'react-icons/fa'; // Import icons
-import Navbar from './Navbar'; // Assuming Navbar is defined
 import './css/Homepage.css';
-import heroImg from '../assests/Unknown.jpeg';
-import heroImg02 from '../assests/VistaCarService.jpg';
 import heroImg03 from '../assests/tow.webp'; // Specify the path to OtherImage1
 import heroImg04 from '../assests/Tyre.webp'; // Specify the path to OtherImage2
 import heroImg05 from '../assests/battery.webp';
 import heroImg06 from '../assests/fuel.webp';
 import heroImg07 from '../assests/key.webp'; // Specify the path to OtherImage3
-import heroVideo from '../assests/carvideo.mp4';
-import Footer from './Footer';
 import Reviews from './Reviews'; // Import the Reviews component
 import Hero from './Hero';
 import About from './About';
@@ -86,9 +80,6 @@ function Homepage() {
                     </Row>
                 </Container>
             </section>
-
-            {/* Include the Footer component */}
-            {/* <Footer /> */}
         </>
     );
 }

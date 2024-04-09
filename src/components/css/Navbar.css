@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 1rem 1.5rem;
     background-color: #365690;
     color: #fff;
 }
@@ -18,32 +18,104 @@
     margin-right: 10px;
 }
 
-.logo span {
-    align-items: center;
-}
-
 .nav-links {
-    flex-grow: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding: 0.3rem;
 }
 
 .nav-links a {
-    margin: 0 30px; /* Adjust spacing between links */
+    margin: 0 1.5rem; /* Adjust spacing between links */
     color: #fff;
     text-align: center;
-}
-
-.right-section .btn {
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #333;
-    border: none;
-    border-radius: 5px;
     text-decoration: none;
 }
 
-.right-section .btn + .btn {
-    margin-left: 10px;
+.right-section {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+.auth-links{
+    display: flex;
+    width: 80%;
+    margin-left: 25%;
+}
+.user-info{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.user-info p{
+    margin: 0 20% 0 20%;
+}
+.logout_btn{
+    background-color: #88bdf2;
+    color: #fff;
+    border: none;
+    padding: 13px 25px; 
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.nav_register {
+    background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF  51%, #ECE9E6  100%);
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #000;            
+    box-shadow: 0 0 2px #eee;
+    border-radius: 10px;
+  }
+
+  .nav_register:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #000;
+    text-decoration: none;
+  }
+ 
+
+.nav_login,
+.nav_register {
+    position: relative;
+    cursor: pointer;
+    margin: 0 0rem 0 1rem;
+    text-align: center;
+    width: 50%;
+}
+
+.lr-dropdown{
+    position: absolute;
+    background-color: #365690;
+    width: 100%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.dropdown-lr {
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.dropdown-lr:hover,
+.dropdown-lr:active,
+.dropdown-lr:focus {
+    background-color: #88bdf2;
+    color: #fff;
+
+}
+
+.active-link {
+    background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF  51%, #ECE9E6  100%);
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #000;            
+    box-shadow: 0 0 10px #eee;
+    border-radius: 10px;
 }

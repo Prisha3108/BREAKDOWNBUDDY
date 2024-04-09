@@ -1,0 +1,75 @@
+.mec_register_container {
+    width: 100%;
+    background: linear-gradient(rgb(255, 255, 255), rgb(99, 219, 255));
+    margin-top: 0 ;
+    padding-bottom: 6%;
+    text-align: center;
+}
+.mec_register_container h2{
+    color: rgb(5, 180, 233);
+    margin: 0;
+    padding-top: 2%;
+}
+.mec_reg_form {
+    background-color: #fff;
+    height: 59vh;
+    width: 35%;
+    margin: 3% 0 0 34%;
+    padding-top: 4%;
+    border-radius: 4rem;
+    box-shadow:
+    -20px 0px 35px -10px rgba(131, 167, 195, 0.5), /* right shadow */
+    0px -10px 35px -10px rgba(131, 167, 195, 0.5), /* bottom shadow */
+    inset 20px 10px 35px 5px rgba(99, 219, 255, 0.5), /* right inside shadow */
+    inset 20px 10px 55px -10px rgba(99, 219, 255, 0.5); 
+}
+
+.mec_reg_input {
+    width: 65%;
+    margin: 2% 0 4% 0;
+    padding: 5px;
+    border-radius: 0.3rem;
+    border-bottom: 2px solid rgba(131, 167, 195, 0.8);
+    border-left: none;
+    border-right: none; 
+    border-top: none;
+}
+.mec_reg_type{
+    width: 67%;
+    margin: 2% 0 4% 0;
+    padding: 5px;
+    border-radius: 0.3rem;
+    border-bottom: 2px solid rgba(131, 167, 195, 0.8);
+    border-left: none;
+    border-right: none; 
+    border-top: none;
+}
+
+.mec_reg_btn {
+    width: 40%;
+    padding: 10px;
+    background-color: rgb(99, 219, 255);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 6%;
+}
+  
+.mec_reg_btn:hover {
+    background-color: rgb(5, 180, 233); 
+}
+
+.mec_tologin {
+    display: flex;
+    align-items: center;
+    margin: 2% 0 0 41%;
+}
+.mec_tologin p{
+    color: rgb(8, 92, 117);
+}
+.mec_login_now{
+    margin-left: 1%;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
