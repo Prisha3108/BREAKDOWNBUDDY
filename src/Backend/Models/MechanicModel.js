@@ -6,7 +6,7 @@ const mechanicSchema = new mongoose.Schema({
   email: String,
   fullName: String,
   password: String,
-  mobileNo: String,
+  mobileNo: Number,
   type: String
 });
 

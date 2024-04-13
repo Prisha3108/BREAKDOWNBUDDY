@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HorizontalBar from './HorizontalBar';
 import '../css/FuelForm.css';
 import { FaUser, FaEnvelope, FaCar, FaStickyNote } from 'react-icons/fa';
@@ -20,43 +20,53 @@ const TowForm = () => {
         add_note: ''
     });
 
-    const handleChange = (e) => {
+    useEffect(() => {
+      // Fetch user email from local storage and set it as the default value of the email field
+      const userEmail = localStorage.getItem('userEmail');
+      if (userEmail) {
+        setFormData(prevState => ({
+          ...prevState,
+          email: userEmail
+        }));
+      }
+    }, []);
+    
+      const handleChange = (e) => {
         const { id, value } = e.target;
         setFormData(prevState => ({
-            ...prevState,
-            [id]: value
+          ...prevState,
+          [id]: value
         }));
-    };
-
-    const handleSubmit = async (e) => {
+      };
+    
+      const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/tow/submitForm', formData, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+          const response = await axios.post('http://localhost:8000/tow/submitForm', formData, {
+            headers: {
+              'Content-Type': 'application/json'
+            },
+          });
+          if (response.status === 200) {
+            console.log('Form data submitted successfully');
+            alert('Form data submitted successfully');
+            // clear form data
+            setFormData({
+              fullName: '',
+              vehicleModel: '',
+              licensePlateNumber: '',
+              towReason: '',
+              destination: '',
+              currentLocation: '',
+              add_note: ''
             });
-            if (response.status === 200) {
-                console.log('Form data submitted successfully');
-                alert('Form data submitted successfully');
-                // clear form data
-                setFormData({
-                    fullName: '',
-                    email: '',
-                    vehicleModel: '',
-                    licensePlateNumber: '',
-                    towReason: '',
-                    currentLocation: '',
-                    destination: '',
-                    add_note: ''
-                });
-            } else {
-                console.error('Failed to submit form data');
-            }
+          } else {
+            console.error('Failed to submit form data');
+          }
         } catch (error) {
-            console.error('Error submitting form data:', error);
+          console.error('Error submitting form data:', error);
         }
-    };
+      };
 
     return (
         <div className='towreq'>
@@ -78,7 +88,7 @@ const TowForm = () => {
                             <label className='all_labels'> <FaUser /> Full Name</label>
                             <input type="text" className='all_inp_label' id='fullName' placeholder='Enter your name' value={formData.fullName} onChange={handleChange} required />
                             <label className='all_labels'> <FaEnvelope /> Email ID</label>
-                            <input type="email" className='all_inp_label' id='email' placeholder='Enter your email' value={formData.email} onChange={handleChange} required />
+                            <input type="email" className='all_inp_label' id='email' placeholder='Enter your email' value={formData.email} onChange={handleChange} disabled required />
                             <label className='all_labels'> <FaCar /> Model of Vehicle</label>
                             <input type="text" className='all_inp_label' id='vehicleModel' placeholder='Enter your vehicle model' value={formData.vehicleModel} onChange={handleChange} required />
                             <label className='all_labels' id='lpn'> 

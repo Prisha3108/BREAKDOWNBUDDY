@@ -44,6 +44,7 @@
     border: none;
     cursor: pointer;
     margin-top: 6%;
+    z-index: 100;
 }
   
 .reg_btn:hover {

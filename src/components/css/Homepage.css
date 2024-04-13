@@ -1,3 +1,6 @@
+.home_page{
+    background: linear-gradient(to right, #dce7ff, rgb(244, 246, 255));
+}
 .choose-us-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -6,8 +9,9 @@
 
 .choose-us-item {
     display: flex;
+    font-weight: 500;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 10px 0 20px 20px;
 }
 
 .choose-us-icon {
@@ -17,9 +21,29 @@
 }
 
 .choose-us-heading {
-    font-size: 28px;
+    color: #000; /* Adjust heading color as needed */
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
     font-weight: bold;
-    color: #007bff; /* Adjust heading color as needed */
+}
+
+.choose-us-heading > span {
+    position: relative;
+}
+.choose-us-heading span::before {
+    content: '';
+    position: absolute;
+    width: 75%;
+    height: 4px;
+    background-color: #62a1f9;
+    border-radius: 8px;
+    left: 0;
+    bottom: -12px;
+}
+.choose-us-item:hover p {
+    color: #f39c12;
+    transform: scale(1.1);
+    
 }
 
 .fade-in-text {
@@ -134,8 +158,6 @@
     border-radius: 10px;
 }
 
-
-
 .services {
     list-style: none;
     padding: 0;
@@ -147,10 +169,14 @@
 
 .why-choose-us {
     padding: 20px;
+    margin-top: 3%;
+    text-align: center;
 }
 
+
 .choose-us-list p {
-    margin-bottom: 15px;
+    margin: 10px 0 15px 33px;
+    max-width: 80%; 
 }
 
 .choose-us-list p:last-child {
@@ -235,7 +261,6 @@
 }
 
 .hero__content h1 {
-    font-size: 3.2rem;
     font-weight: 600;
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -270,14 +295,17 @@
 }
 /* Styling for the Customer Reviews section */
 .reviews-section {
-    text-align: center; /* Center align the section content */
+    text-align: center; 
 }
 
 .reviews-section h2 {
-    font-size: 32px;
+    font-size: 40px;
     font-weight: bold;
     color: #007bff; /* Heading color */
-    margin-bottom: 20px; /* Add space below the heading */
+    margin-bottom: 0px;
+    margin-top: 5%;
+    padding-top: 2%;
+    background: linear-gradient(to right, #d1e0ff, #dae3fe); 
 }
 
 .reviews-section h2::after {

@@ -25,13 +25,36 @@ router.post('/mechregister', async (req, res) => {
   }
 });
 
+// router.post('/mechlogin', async (req, res) => {
+//   const { email, password } = req.body;
+//   try {
+//     // Check if user exists
+//     const mechanic = await Mechanic.findOne({ email });
+//     if (!mechanic) {
+//       return res.status(404).json({ message: 'mechanic not found' });
+//     }
+
+//     // Check if password is correct
+//     if (mechanic.password !== password) {
+//       return res.status(401).json({ message: 'Incorrect password' });
+//     }
+
+//     // Login successful
+//     res.status(200).json({ message: 'Login successful' });
+//   } catch (error) {
+//     console.error('Error logging in:', error);
+//     res.status(500).json({ message: 'Internal server error' });
+//   }
+// });
+
+// Update the /mechlogin endpoint to return the type of mechanic along with the successful login response
 router.post('/mechlogin', async (req, res) => {
   const { email, password } = req.body;
   try {
-    // Check if user exists
+    // Check if mechanic exists
     const mechanic = await Mechanic.findOne({ email });
     if (!mechanic) {
-      return res.status(404).json({ message: 'mechanic not found' });
+      return res.status(404).json({ message: 'Mechanic not found' });
     }
 
     // Check if password is correct
@@ -39,8 +62,8 @@ router.post('/mechlogin', async (req, res) => {
       return res.status(401).json({ message: 'Incorrect password' });
     }
 
-    // Login successful
-    res.status(200).json({ message: 'Login successful' });
+    // Login successful, send type along with the response
+    res.status(200).json({ message: 'Login successful', type: mechanic.type });
   } catch (error) {
     console.error('Error logging in:', error);
     res.status(500).json({ message: 'Internal server error' });

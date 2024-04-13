@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HorizontalBar from './HorizontalBar';
 import '../css/FuelForm.css';
 import { FaUser, FaEnvelope, FaCar, FaStickyNote, FaCarBattery } from 'react-icons/fa';
@@ -17,6 +17,17 @@ const BatteryForm = () => {
         currentLocation: '',
         add_note: ''
     });
+
+      useEffect(() => {
+        // Fetch user email from local storage and set it as the default value of the email field
+        const userEmail = localStorage.getItem('userEmail');
+        if (userEmail) {
+            setBatteryFormData(prevState => ({
+            ...prevState,
+            email: userEmail
+          }));
+        }
+      }, []);
 
     const availableBatteryTypes = ["Lead Acid Battery", "VRLA Batteries", "Lithium-Ion Battery", "Sodium Ion Battery", "Solid-State Battery", "Nickel-Metal Hydride (NiMH) Battery", "Silver Calcium Battery"];
 
@@ -42,7 +53,6 @@ const BatteryForm = () => {
                 // clear form data
                 setBatteryFormData({
                     fullName: '',
-                    email: '',
                     currBatteryType: '',
                     prefBatteryType: '',
                     vehicleModel: '',

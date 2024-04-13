@@ -12,7 +12,14 @@ const BatteryHistory = () => {
 
     const fetchHistory = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/battery/getBatteryHistory');
+            const token = localStorage.getItem('token'); // Assuming you're storing the token in localStorage after login
+            
+            const response = await axios.get('http://localhost:8000/battery/getBatteryHistory', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+    
             if (response.status === 200) {
                 setHistory(response.data);
             } else {
@@ -24,6 +31,7 @@ const BatteryHistory = () => {
             alert('Error fetching battery history');
         }
     };
+    
 
     return (
         <div className='history_page'>

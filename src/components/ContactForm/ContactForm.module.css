@@ -1,0 +1,87 @@
+.top_btn{
+    display: flex;
+    gap: 10px;
+    font-weight: 600px;
+}
+.form{
+    max-height: 400px;
+    margin: 0 0 0 20rem;
+}
+
+.form_control{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    position: relative;
+    font-weight: 400;
+}
+.form_control input{
+    height: 35px;
+    border: 1px solid #365690;
+    margin: 1rem 0 1.3rem 0;
+    padding-left: 1.9rem;
+    padding-top: 0.3rem;
+}
+.form_control label{
+    position: absolute;
+    top: 1px;
+    left: 20px;
+    background-color:rgb(231, 244, 250) ;
+
+}
+.form_control textarea{
+    margin-top: 1rem;
+    height: 13vh;
+    border: 1px solid #365690;
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+.contact_form{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 410px;
+}
+
+.form_section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: rgb(231, 244, 250);
+}
+.contactus{
+    width: 100%;
+    margin: 5% 0 5% 0%;
+}
+.contact_image{
+    height: 65vh;
+    width: 55%;
+    margin: 2.5rem 0 0 0;
+}
+
+.contact_section h1{
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 800;
+    margin: 0px;
+    color: #365690;
+    text-decoration:underline;
+}
+.contact_section p{
+    font-size:1.1rem;
+    font-weight: bold;
+    margin: 1rem 4rem 2rem 15rem;
+    color: #365690;
+}
+.submit{
+    margin: 2rem 0 0 7rem;
+}
+.contact_submit{
+    width: 25%;
+    padding: 0.8rem;
+    background-color: #365690;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+}

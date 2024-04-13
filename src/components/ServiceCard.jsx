@@ -2,13 +2,18 @@ import React from 'react';
 import './css/ServiceCard.css'; // Assuming you have a CSS file for styling
 import { useNavigate } from 'react-router-dom';
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = ({ service, isLoggedIn }) => {
     const { imgUrl, title, desc, requestLink } = service;
     const navigate = useNavigate();
 
     const handleRequest = () => {
-        // Navigate to the request page wahen the REQUEST button is clicked
-        navigate(requestLink);
+        if (isLoggedIn) {
+            // Navigate to the request page if the user is logged in
+            navigate(requestLink);
+        } else {
+            // Redirect to the login page if the user is not logged in
+            navigate('/login');
+        }
     };
 
     return (
@@ -18,7 +23,7 @@ const ServiceCard = ({ service }) => {
             </div>
             <h5>{title}</h5>
             <p>{desc}</p>
-            <button className="requestButton" onClick={handleRequest}>REQUEST</button> {/* Add a button labeled "REQUEST" */}
+            <button className="requestButton" onClick={handleRequest}>REQUEST</button>
         </div>
     );
 };

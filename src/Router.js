@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Services from './components/Services';
-import Contact from './components/Contact';
 import Login from './components/LoginRegister/Login';
 import Profile from './components/Customer/Profile';
 import FuelForm from './components/Customer/FuelForm';
@@ -23,6 +22,8 @@ import TyreHistory from './components/Customer/History/TyreHistory';
 import Register from './components/LoginRegister/Register';
 import MechanicLogin from './components/LoginRegister/MechanicLogin';
 import MechanicRegister from './components/LoginRegister/MechanicRegister';
+import DemoProfile from './components/Customer/DemoProfile';
+import ContactForm from './components/ContactForm/ContactForm';
 
 function AppRouter() {
     return (
@@ -30,10 +31,10 @@ function AppRouter() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<ContactForm />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/userprofile" element={<Profile />} />
             <Route path="/feedback" element={<Feedback />} />
 
             <Route path="/fuelrequest" element={<FuelForm />} />
@@ -52,6 +53,9 @@ function AppRouter() {
             <Route path="/batteryreply" element={<BatteryReply />} />
             <Route path="/mechlogin" element={<MechanicLogin />} />
             <Route path="/mechregister" element={<MechanicRegister />} />
+
+
+            <Route path="/profile2" element={<DemoProfile />} />
 
 
         </Routes>

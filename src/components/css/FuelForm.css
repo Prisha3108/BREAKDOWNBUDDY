@@ -1,7 +1,11 @@
 .batteryreq, .fuelreq, .towreq, .tyrereq{
     width: 100%;
     display: inline-block;
-    background-color: #61a5c2;
+    /* background-color: #bdd1fe; */
+    /* background-color: #9ad1f8; */
+    background: linear-gradient(to right, #d1defb, rgb(239, 242, 255)); 
+
+
 }
 .form_box{
     width: 100%;

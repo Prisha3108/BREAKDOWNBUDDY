@@ -4,6 +4,27 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import Axios for HTTP requests
 
 const MechanicLogin = () => {
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('');
+    // const [error, setError] = useState('');
+    // const navigate = useNavigate(); 
+
+    // const handleLogin = async () => {
+    //     try {
+    //         const response = await axios.post('http://localhost:8000/mechauth/mechlogin', {
+    //             email,
+    //             password
+    //         });
+
+    //         // Store user data in local storage
+    //         localStorage.setItem('user', JSON.stringify({ email: email }));
+    //         // Redirect user to home page
+    //         navigate('/');
+    //     } catch (error) {
+    //         console.error('Error logging in:', error);
+    //         setError('Invalid email or password.');
+    //     }
+    // };
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -15,17 +36,31 @@ const MechanicLogin = () => {
                 email,
                 password
             });
-
+    
             // Store user data in local storage
-            localStorage.setItem('user', JSON.stringify({ email: email }));
-            // Redirect user to home page
-            navigate('/');
+            localStorage.setItem('token', response.data.token); // Assuming your API returns a token
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userType', response.data.type);
+    
+            // Redirect user based on type
+            if(response.data.type === 'Fuel Service') {
+                navigate('/fuelreply');
+            } else if(response.data.type === 'Battery Provider') {
+                navigate('/batteryreply');
+            } else if(response.data.type === 'Tow Service') {
+                navigate('/towreply');
+            } else if(response.data.type === 'Tyre Provider') {
+                navigate('/tyrereply');
+            } else {
+                // Handle if type doesn't match any specific route
+                navigate('/');
+            }
         } catch (error) {
             console.error('Error logging in:', error);
             setError('Invalid email or password.');
         }
     };
-
+    
     return (
         <div className="mec_login_page">
             <div className="mec_login_container">

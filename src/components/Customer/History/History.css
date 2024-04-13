@@ -1,8 +1,10 @@
 .history_page{
-    background-color: #fff;
+    background: linear-gradient(to right, #d1defb, rgb(239, 242, 255)); 
+    min-height: 90vh;
+    overflow-x: auto;
 }
 .history-container {
-    margin: 2%;
+    padding: 2%;
 }
 .history-container h2{
     text-align: center;

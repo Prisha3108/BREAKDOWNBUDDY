@@ -12,7 +12,14 @@ const FuelHistory = () => {
 
     const fetchHistory = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/fuel/getFuelHistory');
+            const token = localStorage.getItem('token'); // Assuming you're storing the token in localStorage after login
+            
+            const response = await axios.get('http://localhost:8000/fuel/getFuelHistory', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+    
             if (response.status === 200) {
                 setHistory(response.data);
             } else {

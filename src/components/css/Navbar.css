@@ -2,8 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
-    background-color: #365690;
+    background-color: #072254c1;
     color: #fff;
 }
 
@@ -13,9 +12,9 @@
 }
 
 .logo img {
-    width: 50px; 
-    height: 50px;
-    margin-right: 10px;
+    width: 85%; 
+    height: 15vh;
+    margin: 0 10px 0 15px;
 }
 
 .nav-links {
@@ -27,6 +26,7 @@
 .nav-links a {
     margin: 0 1.5rem; /* Adjust spacing between links */
     color: #fff;
+    font-weight: 500;
     text-align: center;
     text-decoration: none;
 }
@@ -48,6 +48,7 @@
 }
 .user-info p{
     margin: 0 20% 0 20%;
+    font-weight: 500;
 }
 .logout_btn{
     background-color: #88bdf2;
@@ -79,9 +80,10 @@
 .nav_register {
     position: relative;
     cursor: pointer;
-    margin: 0 0rem 0 1rem;
+    margin: 0 2rem 0 1rem;
     text-align: center;
     width: 50%;
+    z-index: 999;
 }
 
 .lr-dropdown{

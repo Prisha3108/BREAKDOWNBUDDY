@@ -32,7 +32,7 @@ const HorizontalBar = ({}) => {
           )}
         </div>
 
-        <Link to={'/profile'} className='bar_button'><FiUser /> 
+        <Link to={'/userprofile'} className='bar_button'><FiUser /> 
         <p> Profile </p> </Link>
 
         <div className={`bar_button ${historyDropdownOpen ? 'active-link' : ''}`} onClick={toggleHistoryDropdown}>

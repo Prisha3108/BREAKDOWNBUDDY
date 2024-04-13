@@ -1,63 +1,63 @@
 import React, { useState } from 'react';
 import '../css/Register.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import Axios for HTTP requests
 
 const Register = () => {
-    const [email, setEmail] = useState('');
-    const [fullName, setFullName] = useState('');
-    const [password, setPassword] = useState('');
-    const [mobileNo, setMobileNo] = useState('');
+    const [data, setData] = useState({
+        fullName: "",
+        email: "",
+        password: "",
+        mobileNo: ""
+    });
+
+    const navigate = useNavigate();
+
+    const handleChange = ({currentTarget: input}) => (
+        setData({...data, [input.name]: input.value})
+    )
+
     const [error, setError] = useState('');
 
-    const handleRegister = async () => {
+    const handleRegister = async (e) => {
+        e.preventDefault();
         try {
             // Validation
-            if (!email || !fullName || !password || !mobileNo) {
+            if (!data.email || !data.fullName || !data.password || !data.mobileNo) {
                 setError('Please fill in all fields.');
                 return;
             }
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
                 setError('Invalid email address.');
                 return;
             }
-            if (/\d/.test(fullName)) {
+            if (/\d/.test(data.fullName)) {
                 setError('Name should not contain numbers.');
                 return;
             }
-            if (mobileNo.length !== 10 || !/^\d+$/.test(mobileNo)) {
+            if (data.mobileNo.length !== 10 || !/^\d+$/.test(data.mobileNo)) {
                 setError('Mobile number should be exactly 10 digits long and contain only numbers.');
                 return;
             }
-            if (password.length < 6 || !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
+            if (data.password.length < 6 || !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(data.password)) {
                 setError('Password should be at least 6 characters long and contain at least one letter and one number.');
                 return;
             }
 
-            // Send POST request to backend API
-            await axios.post('http://localhost:8000/auth/register', {
-                email,
-                fullName,
-                password,
-                mobileNo
-            });
+            const url = "http://localhost:8000/auth/register";
+            const {data:res} = await axios.post(url, data);
+            navigate("/login")
             console.log('Registration successful!');
-            // Clear input fields
-            setError('');
-            setEmail('');
-            setFullName('');
-            setPassword('');
-            setMobileNo('');
-            // Display alert
+
             alert('Registration successful!');
         } catch (error) {
             if (error.response && error.response.status === 400) {
                 setError('User already exists. Please use a different email.');
                 // Clear input fields
-                setEmail('');
-                setFullName('');
-                setPassword('');
-                setMobileNo('');
+                // setEmail('');
+                // setFullName('');
+                // setPassword('');
+                // setMobileNo('');
             } else {
                 console.error('Error registering:', error);
             }
@@ -71,17 +71,17 @@ const Register = () => {
             {error && <p className="error-message">{error}</p>}
 
             <div className="reg_form">
-                <input className='reg_input' type="email" placeholder="Email" value={email}
-                    onChange={(e) => setEmail(e.target.value)} required />
+                <input className='reg_input' type="email" placeholder="Email" name='email' value={data.email}
+                    onChange={handleChange} required />
 
-                <input className='reg_input' type="text" placeholder="Full Name" value={fullName}
-                    onChange={(e) => setFullName(e.target.value)} required />
+                <input className='reg_input' type="text" placeholder="Full Name" name='fullName' value={data.fullName}
+                    onChange={handleChange} required />
 
-                <input className='reg_input' type="tel" placeholder="Mobile Number" value={mobileNo}
-                    onChange={(e) => setMobileNo(e.target.value)} required />
+                <input className='reg_input' type="tel" placeholder="Mobile Number" name='mobileNo' value={data.mobileNo}
+                    onChange={handleChange} required />
 
-                <input className='reg_input' type="password" placeholder="Password" value={password}
-                    onChange={(e) => setPassword(e.target.value)} required />
+                <input className='reg_input' type="password" placeholder="Password" name='password' value={data.password}
+                    onChange={handleChange} required />
 
                 <button className='reg_btn' onClick={handleRegister}>Register</button>
             </div>

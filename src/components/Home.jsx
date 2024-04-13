@@ -34,18 +34,20 @@ function Homepage() {
     ];
 
     return (
-        <>
-            <Hero/>
-            <About/>
-            <Info/>
-            
+        <div className='home_page'>
+            <Hero />
+            <About />
+            <Info />
+
             <section>
                 <Container>
                     <Row>
-                        
+
                         <Col lg='9'>
                             <div className="why-choose-us">
-                                <h2 className="choose-us-heading">Why Choose Us?</h2>
+                                <h3 className="choose-us-heading">
+                                    <span>Why Choose Us?</span>
+                                </h3>
                                 <div className="choose-us-list">
                                     <div className="choose-us-item">
                                         <FaClock className="choose-us-icon" />
@@ -66,6 +68,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </Col>
+
                     </Row>
                 </Container>
             </section>
@@ -80,7 +83,7 @@ function Homepage() {
                     </Row>
                 </Container>
             </section>
-        </>
+        </div>
     );
 }
 

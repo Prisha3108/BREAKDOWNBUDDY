@@ -12,7 +12,14 @@ const TowHistory = () => {
 
     const fetchHistory = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/tow/getTowHistory');
+            const token = localStorage.getItem('token'); // Assuming you're storing the token in localStorage after login
+            
+            const response = await axios.get('http://localhost:8000/tow/getTowHistory', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+    
             if (response.status === 200) {
                 setHistory(response.data);
             } else {
@@ -24,7 +31,6 @@ const TowHistory = () => {
             alert('Error fetching tow history');
         }
     };
-
     return (
         <div className='history_page'>
             <HorizontalBar />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 import Slider from 'react-slick';
-import InformationCard from './InformationCard'; 
+import InformationCard from './InformationCard';
 import { faGasPump, faCarBattery, faTruckPickup, faTools } from '@fortawesome/free-solid-svg-icons'; // Import icons
 import './css/Info.css';
 
@@ -12,27 +12,27 @@ import tyreImage from '../assests/Tyre.webp'; // Import the image for tire
 
 function Info() {
   const services = [
-    { 
-      title: 'Fuel Refill', 
-      description: "Whether you've run out of fuel or need a top-up, our team will promptly deliver fuel to your location, ensuring you're back on the road in no time.", 
+    {
+      title: 'Fuel Refill',
+      description: "Whether you've run out of fuel or need a top-up, our team will promptly deliver fuel to your location, ensuring you're back on the road in no time.",
       icon: faGasPump,
       imageSrc: fuelImage // Assign the image source for fuel
     },
-    { 
-      title: 'Battery Replacement', 
-      description: "If your vehicle's battery has failed, we'll provide on-the-spot battery replacement services to get your vehicle running smoothly again.", 
+    {
+      title: 'Battery Replacement',
+      description: "If your vehicle's battery has failed, we'll provide on-the-spot battery replacement services to get your vehicle running smoothly again.",
       icon: faCarBattery,
       imageSrc: batteryImage // Assign the image source for battery
     },
-    { 
-      title: 'Towing Service', 
-      description: "In the event of a breakdown or accident, our towing service will safely transport your vehicle to the nearest repair facility, ensuring minimal disruption to your journey.", 
+    {
+      title: 'Towing Service',
+      description: "In the event of a breakdown or accident, our towing service will safely transport your vehicle to the nearest repair facility, ensuring minimal disruption to your journey.",
       icon: faTruckPickup,
       imageSrc: towingImage // Assign the image source for towing
     },
-    { 
-      title: 'Tyre Change', 
-      description: "Whether you have a flat tire or need assistance with a tire change, our team will swiftly replace your tire, getting you back on the road safely.", 
+    {
+      title: 'Tyre Change',
+      description: "Whether you have a flat tire or need assistance with a tire change, our team will swiftly replace your tire, getting you back on the road safely.",
       icon: faTools,
       imageSrc: tyreImage // Assign the image source for tire
     }

@@ -1,7 +1,7 @@
 .info-section {
     padding: 0 32px;
     text-align: center;
-    background-color: white;
+    background: linear-gradient(to right, #dce7ff, rgb(244, 246, 255));    
 }
 .info-title-content {
     margin: 16px 0; /* Adjust top and bottom margin as needed */
@@ -37,18 +37,19 @@
 
 /* Cards */
 .info-cards-content {
-    margin: 64px 0;
+    margin: 34px 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
 }
 .info-cards {
-    height: 400px; /* Adjust height as needed */
+    height: 66vh; /* Adjust height as needed */
     border: 2px solid #d7d3d3;
     border-radius: 12px;
     background-color: white;
     position: relative;
-    margin-top: 100px; /* Adjust the top margin to increase height from the top */
+    margin-top: 2rem;
+    margin-left: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,7 +65,7 @@
 
 
 .info-card-title {
-    margin: 32px 0 40px 0;
+    margin: 72px 0 0px 0;
     color: black;
     font-family: 'Poppins', sans-serif;
     font-size: 28px;

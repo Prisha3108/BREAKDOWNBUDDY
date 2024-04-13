@@ -4,27 +4,32 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import Axios for HTTP requests
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [data, setData] = useState({
+        email: "",
+        password: ""
+    });
     const [error, setError] = useState('');
     const navigate = useNavigate(); 
 
+    
+    const handleChange = ({currentTarget: input}) => (
+        setData({...data, [input.name]: input.value})
+    )
+
     const handleLogin = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/auth/login', {
-                email,
-                password
-            });
-
-            // Store user data in local storage
-            localStorage.setItem('user', JSON.stringify({ email: email }));
-            // Redirect user to home page
+            const url = "http://localhost:8000/auth/login";
+            const { data: res } = await axios.post(url, data);
+            localStorage.setItem('token', res.token);
+            localStorage.setItem('userEmail', res.userEmail); // Store user's email
+            console.log('Login successful!');
             navigate('/');
         } catch (error) {
             console.error('Error logging in:', error);
             setError('Invalid email or password.');
         }
     };
+    
 
     return (
         <div className="login_page">
@@ -36,15 +41,15 @@ const Login = () => {
                 <div className="login_form">
                     <input className='login_input'
                         type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Email" name='email'
+                        value={data.email}
+                        onChange={handleChange}
                     />
                     <input className='login_input'
                         type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Password" name='password'
+                        value={data.password}
+                        onChange={handleChange}
                     />
                     <button className='login_btn' onClick={handleLogin}>Login</button>
                 </div>
@@ -59,4 +64,3 @@ const Login = () => {
 };
 
 export default Login;
-

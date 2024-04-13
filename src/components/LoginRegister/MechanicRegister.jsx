@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../css/MechanicRegister.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import Axios for HTTP requests
 
 const MechanicRegister = () => {
@@ -10,6 +10,7 @@ const MechanicRegister = () => {
     const [mobileNo, setMobileNo] = useState('');
     const [error, setError] = useState('');
     const [type, setType] = useState("");
+    const navigate = useNavigate();
 
     const types = [
         { id: 1, name: "Fuel Service" },
@@ -51,15 +52,10 @@ const MechanicRegister = () => {
                 type
             });
             console.log('Registration successful!');
-            // Clear input fields
-            setError('');
-            setEmail('');
-            setFullName('');
-            setPassword('');
-            setMobileNo('');
-            setType('');
             // Display alert
             alert('Registration successful!');
+
+            navigate('/mechlogin');
         } catch (error) {
             if (error.response && error.response.status === 400) {
                 setError('User already exists. Please use a different email.');

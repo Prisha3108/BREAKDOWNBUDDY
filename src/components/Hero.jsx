@@ -15,7 +15,7 @@ function Hero() {
   };
 
   const handleBookAppointmentClick = () => {
-    navigate("/appointment");
+    navigate("/services");
   };
 
   useEffect(() => {

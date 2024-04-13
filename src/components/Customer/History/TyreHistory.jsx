@@ -9,19 +9,26 @@ const TyreHistory = () => {
     useEffect(() => {
         fetchHistory();
     }, []);
-
+    
     const fetchHistory = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/tyre/getTyreHistory');
+            const token = localStorage.getItem('token'); // Assuming you're storing the token in localStorage after login
+            
+            const response = await axios.get('http://localhost:8000/tyre/getTyreHistory', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+    
             if (response.status === 200) {
                 setHistory(response.data);
             } else {
-                console.error('Failed to fetch tyre history');
-                alert('Failed to fetch tyre history');
+                console.error('Failed to fetch fuel history');
+                alert('Failed to fetch fuel history');
             }
         } catch (error) {
-            console.error('Error fetching tyre history:', error);
-            alert('Error fetching tyre history');
+            console.error('Error fetching fuel history:', error);
+            alert('Error fetching fuel history');
         }
     };
 

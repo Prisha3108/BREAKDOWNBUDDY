@@ -1,9 +1,9 @@
 .feedbackreq{
     width: 100%;
     display: inline-block;
-    background-color: #7837a7;
-    /* background-color: #00509d; */
-    position: relative;
+    /* background-color: #7837a7; */
+    /* background-color: #3e92cc; */
+
 }
 .feedback_image{
     width: 100%;
@@ -41,20 +41,24 @@
     display: flex;
     border-radius: 3rem;
 }
-.form_fb{
+.form_fb {
     background-color: #fff;
     width: 36%;
     height: 52vh;
     margin: 5% 0 0 18%;
     border-radius: 3rem;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow */
 }
-.fb_container{
+
+.fb_container {
     background-color: #fff;
     width: 80%;
     height: 52vh;
     margin: 10% 0 0 13%;
     border-radius: 3rem;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow */
 }
+
 .review_submit {
     background-image: linear-gradient(to right, #7837a7 0%, #a044ff  51%, #6a3093  100%);
     margin: 7% 0 0 35%;

@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ServiceCard from './ServiceCard';
 import './css/Services.css';
-
-import backgroundImage from '../assests/headerservicesimg.jpeg'; // Update the path to the image
+import backgroundImage from '../assests/headerservicesimg.jpeg';
 import fuelImg from '../assests/fuelimage.jpeg';
-import batteryImg from '../assests/batteryimage.jpeg'; // Update the path to the battery image
+import batteryImg from '../assests/batteryimage.jpeg';
 import towImg from '../assests/towimage.jpeg';
 import tyreImg from '../assests/tyreimage.webp';
-// import Footer from './Footer';
 
 const servicesData = [
+    
     {
         imgUrl: fuelImg,
         title: "Fuel",
@@ -37,21 +36,29 @@ const servicesData = [
 ];
 
 const Services = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    useEffect(() => {
+        // Check if user is logged in
+        const token = localStorage.getItem('token');
+        if (token) {
+            setIsLoggedIn(true);
+        } else {
+            setIsLoggedIn(false);
+        }
+    }, []);
+
+
     return (
         <div className="services-container">
             <div className="header-image">
                 <img src={backgroundImage} alt="Background Image" style={{ width: '100%', height: 'auto' }} />
                 <h2>Our Services</h2>
-                {/* Optional: You can add content or additional images here */}
             </div>
             <div className="service__list">
                 {servicesData.map((service, index) => (
-                    <ServiceCard key={index} service={service} />
+                    <ServiceCard key={index} service={service} isLoggedIn={isLoggedIn} />
                 ))}
             </div>
-            {/* <div className="footer">
-            <Footer />
-            </div> */}
             
         </div>
     );

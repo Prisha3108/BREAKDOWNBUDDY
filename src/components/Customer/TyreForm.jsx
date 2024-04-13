@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaUser, FaEnvelope, FaCar, FaStickyNote } from 'react-icons/fa';
 import HorizontalBar from './HorizontalBar';
 import '../css/FuelForm.css';
@@ -18,6 +18,17 @@ const TyreForm = () => {
         add_note: ''
     });
 
+    useEffect(() => {
+        // Fetch user email from local storage and set it as the default value of the email field
+        const userEmail = localStorage.getItem('userEmail');
+        if (userEmail) {
+            setTyreFormData(prevState => ({
+            ...prevState,
+            email: userEmail
+          }));
+        }
+      }, []);
+    
     const handleChange = (e) => {
         const { id, value } = e.target;
         setTyreFormData(prevState => ({
@@ -40,7 +51,6 @@ const TyreForm = () => {
                 // clear form data
                 setTyreFormData({
                     fullName: '',
-                    email: '',
                     numTyreReq: '',
                     vehicleModel: '',
                     licensePlateNumber: '',
@@ -76,7 +86,7 @@ const TyreForm = () => {
                             <input type="text" className='all_inp_label' id="fullName" placeholder='Enter your name' value={tyreFormData.fullName} onChange={handleChange} required />
 
                             <label className='all_labels'> <FaEnvelope /> Email ID </label>
-                            <input type="email" className='all_inp_label' id="email" placeholder='Enter your email' value={tyreFormData.email} onChange={handleChange} required />
+                            <input type="email" className='all_inp_label' id="email" placeholder='Enter your email' value={tyreFormData.email} onChange={handleChange} disabled required />
 
                             <label className='all_labels'> <GiCarWheel /> No. of tyres to be replaced </label>
                             <input type="number" className='all_inp_label' id="numTyreReq" placeholder='Enter no. of tyre' value={tyreFormData.numTyreReq} onChange={handleChange} required />

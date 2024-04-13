@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const TowDetailsModel = require("../Models/TowDetailsModel");
+const jwt = require('jsonwebtoken');
+const User = require('../Models/UserModel');
 
 router.post("/submitForm", async (req, res) => {
   try {
@@ -61,14 +63,27 @@ router.put("/updateRequestStatus/:id", async (req, res) => {
 });
 
 router.get("/getTowHistory", async (req, res) => {
-    try {
-      const history = await TowDetailsModel.find({ status: { $ne: '' } });
+  try {
+      // Get the token from the request headers
+      const token = req.headers.authorization.split(' ')[1]; // Assuming token is sent in the format: Bearer <token>
+      
+      // Verify the token
+      const decodedToken = jwt.verify(token, 'newkyewuehh');
+      
+      // Find the user based on the decoded token
+      const user = await User.findById(decodedToken.id);
+      
+      if (!user) {
+          return res.status(404).json({ message: 'User not found' });
+      }
+      
+      // Fetch tow history for the current user
+      const history = await TowDetailsModel.find({ email: user.email, status: { $ne: '' } });
       res.json(history);
-    } catch (error) {
+  } catch (error) {
       console.error("Error fetching tow history:", error);
       res.status(500).json({ error: "An error occurred while fetching tow history." });
-    }
+  }
 });
-
 
 module.exports = router;

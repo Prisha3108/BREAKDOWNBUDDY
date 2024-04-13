@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HorizontalBar from './HorizontalBar';
 import '../css/FuelForm.css';
 import { FaUser, FaEnvelope, FaCar, FaStickyNote } from 'react-icons/fa';
 import { IoLocationSharp } from "react-icons/io5";
 import { BsFillFuelPumpFill } from "react-icons/bs";
 import license from '../../assests/license-plate.png'
-import axios from 'axios'; // Import Axios
+import axios from 'axios';
 
 const FuelForm = () => {
   const [fuelFormData, setFuelFormData] = useState({
@@ -20,6 +20,17 @@ const FuelForm = () => {
   });
 
   const availableFuelTypes = ["Petrol", "Diesel", "CNG"];
+
+  useEffect(() => {
+    // Fetch user email from local storage and set it as the default value of the email field
+    const userEmail = localStorage.getItem('userEmail');
+    if (userEmail) {
+      setFuelFormData(prevState => ({
+        ...prevState,
+        email: userEmail
+      }));
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -43,7 +54,6 @@ const FuelForm = () => {
         // clear form data
         setFuelFormData({
           fullName: '',
-          email: '',
           vehicleModel: '',
           licensePlateNumber: '',
           fuelAmount: '',
@@ -82,18 +92,18 @@ const FuelForm = () => {
               <input type="text" className='all_inp_label' id='fullName' placeholder='Enter your name' value={fuelFormData.fullName} onChange={handleChange} required />
 
               <label className='all_labels'> <FaEnvelope /> Email ID</label>
-              <input type="email" className='all_inp_label' id='email' placeholder='Enter your email'  value={fuelFormData.email} onChange={handleChange} required />
+              <input type="email" className='all_inp_label' id='email' placeholder='Enter your email' value={fuelFormData.email} onChange={handleChange} disabled required />
 
               <label className='all_labels'> <FaCar /> Model of Vehicle</label>
-              <input type="text" className='all_inp_label' id='vehicleModel' placeholder='Enter your vehicle model'  value={fuelFormData.vehicleModel} onChange={handleChange} required />
+              <input type="text" className='all_inp_label' id='vehicleModel' placeholder='Enter your vehicle model' value={fuelFormData.vehicleModel} onChange={handleChange} required />
 
               <label className='all_labels' id='lpn'>
-              <img src={license} alt="License-Plate" className="license" /> 
-              License Plate Number</label>
+                <img src={license} alt="License-Plate" className="license" />
+                License Plate Number</label>
               <input type="text" className='all_inp_label' id='licensePlateNumber' placeholder='Enter your vehicle license plate number' value={fuelFormData.licensePlateNumber} onChange={handleChange} required />
 
               <label className='all_labels'> <BsFillFuelPumpFill /> Amount of Fuel Needed (in Liters) </label>
-              <input type="number" step="0.1" className='all_inp_label' id='fuelAmount' placeholder='Enter the amount of fuel'  value={fuelFormData.fuelAmount} onChange={handleChange} required />
+              <input type="number" step="0.1" className='all_inp_label' id='fuelAmount' placeholder='Enter the amount of fuel' value={fuelFormData.fuelAmount} onChange={handleChange} required />
 
               <label className='all_labels'> <BsFillFuelPumpFill /> Fuel Type </label>
               <select id="fuelType" className='all_inp_label' value={fuelFormData.fuelType} onChange={handleChange} required>
@@ -104,12 +114,12 @@ const FuelForm = () => {
               </select>
 
               <label className='all_labels'> <IoLocationSharp /> Current Location</label>
-              <input type="text" className='all_inp_label' id='currentLocation' placeholder='Enter your current location'  value={fuelFormData.currentLocation} onChange={handleChange} required />
+              <input type="text" className='all_inp_label' id='currentLocation' placeholder='Enter your current location' value={fuelFormData.currentLocation} onChange={handleChange} required />
             </div>
           </div>
           <div className="edit_other">
             <label className='add_note'> <FaStickyNote /> Additional Note </label>
-            <input type="text" className='all_inp_label' id='add_note' placeholder='Enter message'  value={fuelFormData.add_note} onChange={handleChange} />
+            <input type="text" className='all_inp_label' id='add_note' placeholder='Enter message' value={fuelFormData.add_note} onChange={handleChange} />
           </div>
         </form>
       </div>

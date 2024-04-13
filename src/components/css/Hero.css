@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #ECF2FF, #FBFCFF);
+    background: linear-gradient(to right, #dce7ff, rgb(244, 246, 255));
 }
 
 .text-section {
