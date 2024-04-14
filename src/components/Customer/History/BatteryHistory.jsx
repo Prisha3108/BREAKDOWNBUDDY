@@ -22,7 +22,7 @@ const BatteryHistory = () => {
     
             if (response.status === 200) {
                 setHistory(response.data);
-            } else {
+            } else { 
                 console.error('Failed to fetch battery history');
                 alert('Failed to fetch battery history');
             }
@@ -46,6 +46,7 @@ const BatteryHistory = () => {
                             <th>Model of Vehicle</th>
                             <th>License Plate</th>
                             <th>Current Location</th>
+                            <th>Required Battery type</th>
                             <th>Additional Note</th>
                             <th>Request Status</th>
                         </tr>
@@ -58,6 +59,7 @@ const BatteryHistory = () => {
                                 <td>{item.vehicleModel}</td>
                                 <td>{item.licensePlateNumber}</td>
                                 <td>{item.currentLocation}</td>
+                                <td>{item.prefBatteryType}</td>
                                 <td>{item.add_note}</td>
                                 <td>{item.status || 'Pending' }</td>
                             </tr>
