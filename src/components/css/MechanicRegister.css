@@ -1,12 +1,12 @@
 .mec_register_container {
     width: 100%;
-    background: linear-gradient(rgb(255, 255, 255), rgb(99, 219, 255));
+    background: linear-gradient(to right, #dce7ff, rgb(244, 246, 255));
     margin-top: 0 ;
     padding-bottom: 6%;
     text-align: center;
 }
 .mec_register_container h2{
-    color: rgb(5, 180, 233);
+    color: #100f0f;
     margin: 0;
     padding-top: 2%;
 }
@@ -20,8 +20,8 @@
     box-shadow:
     -20px 0px 35px -10px rgba(131, 167, 195, 0.5), /* right shadow */
     0px -10px 35px -10px rgba(131, 167, 195, 0.5), /* bottom shadow */
-    inset 20px 10px 35px 5px rgba(99, 219, 255, 0.5), /* right inside shadow */
-    inset 20px 10px 55px -10px rgba(99, 219, 255, 0.5); 
+    inset 20px 10px 35px 5px #7b97c8c1, /* right inside shadow */
+    inset 20px 10px 55px -10px #7b97c8c1; 
 }
 
 .mec_reg_input {
@@ -48,7 +48,7 @@
 .mec_reg_btn {
     width: 40%;
     padding: 10px;
-    background-color: rgb(99, 219, 255);
+    background-color: #072254c1;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -69,7 +69,7 @@
 }
 .mec_login_now{
     margin-left: 1%;
-    color: #fff;
+    color: #072254c1;
     font-weight: bold;
     text-decoration: none;
 }
