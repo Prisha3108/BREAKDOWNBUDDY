@@ -21,6 +21,8 @@ const Feedback = () => {
       .then(
         () => {
           console.log('SUCCESS!');
+          alert('Thanks for your feedback!');
+          form.current.reset(); // Clear all input fields
         },
         (error) => {
           console.log('FAILED...', error.text);
