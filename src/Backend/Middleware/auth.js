@@ -1,4 +1,4 @@
-// auth.js in Controllers folder
+// auth.js
 const jwt = require('jsonwebtoken');
 
 const auth = (req, res, next) => {

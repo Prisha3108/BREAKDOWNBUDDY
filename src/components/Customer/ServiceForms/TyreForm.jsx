@@ -1,10 +1,11 @@
+// TyreForm.jsx
 import React, { useState, useEffect } from 'react';
 import { FaUser, FaEnvelope, FaCar, FaStickyNote } from 'react-icons/fa';
-import HorizontalBar from './HorizontalBar';
-import '../css/FuelForm.css';
+import HorizontalBar from '../HorizontalBar';
+import './FuelForm.css';
 import { GiCarWheel } from "react-icons/gi";
 import { IoLocationSharp } from "react-icons/io5";
-import license from '../../assests/license-plate.png';
+import license from '../../../assests/license-plate.png'
 import axios from 'axios'; // Import Axios
 
 const TyreForm = () => {

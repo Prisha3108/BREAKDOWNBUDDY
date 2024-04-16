@@ -1,10 +1,9 @@
+// Profile.jsx
 import React, { useState, useEffect } from 'react';
 import HorizontalBar from './HorizontalBar';
 import '../css/Profile.css';
 import pfimg from '../../assests/profile.jpg';
 import axios from 'axios';
-import { FaRegEyeSlash } from "react-icons/fa";
-import { FaRegEye } from "react-icons/fa";
 
 const Profile = () => {
   const [profileImage, setProfileImage] = useState(null);
@@ -18,7 +17,7 @@ const Profile = () => {
     licensePlateNumber: '',
     emergencyContact: '',
     relation: '',
-    emergencyName: ''
+    emergencyName: '',
   });
   const [editMode, setEditMode] = useState(false);
   const [email, setEmail] = useState('');

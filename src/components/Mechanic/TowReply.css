@@ -1,14 +1,20 @@
 .tow-reply-container {
-    margin: 2%;
+    margin: 0%;
+    min-height: 95vh;
+    background: linear-gradient(to right, #d1defb, rgb(239, 242, 255)); 
+    padding: 2%;
   }
 .tow-reply-container h2{
   text-align: center;
+  margin: 0;
 }
 .tow-request-table {
     width: 100%;
     border: 1.5px solid #ddd;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-collapse: collapse;
+    background-color: #fff;
+    margin-top: 3%;
 }
 .tow-request-table th, .tow-request-table td {
     padding: 0.6rem;

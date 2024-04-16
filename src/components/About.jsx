@@ -1,3 +1,4 @@
+// About.jsx
 import React from "react";
 import Doctor from "../assests/about.jpeg";
 import SolutionStep from "./SolutionStep";
@@ -15,7 +16,7 @@ function About() {
           <span>About Us</span>
         </h3>
         <p className="about-description">
-        Revive Car Assistance was founded with a simple yet powerful mission: to provide reliable and efficient car assistance services that give drivers peace of mind on the road. With years of experience in the automotive industry, our team recognized the need for a service that goes beyond traditional roadside assistance – one that prioritizes customer satisfaction and delivers top-notch service every time.
+        Revive Car Assistance was founded with a simple yet powerful mission: to provide reliable and efficient car assistance services that give drivers peace of mind on the road. With years of experience in the automotive industry, our team recognized the need for a service that goes beyond traditional roadside assistance - one that prioritizes customer satisfaction and delivers top-notch service every time.
 
         </p>
 

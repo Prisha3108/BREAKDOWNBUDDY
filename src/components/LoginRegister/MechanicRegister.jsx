@@ -1,5 +1,6 @@
+// MechanicRegister.jsx
 import React, { useState } from 'react';
-import '../css/MechanicRegister.css';
+import './MechanicRegister.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import Axios for HTTP requests
 

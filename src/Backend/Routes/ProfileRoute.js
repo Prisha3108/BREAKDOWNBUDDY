@@ -1,6 +1,7 @@
+// ProfileRoute.js
 const express = require('express');
 const router = express.Router();
-const auth = require('../Controllers/auth'); // Import authentication middleware
+const auth = require('../Middleware/auth'); // Import authentication middleware
 const Profile = require('../Models/ProfileModel'); // Import Profile model
 
 // Endpoint to fetch profile data
@@ -21,6 +22,7 @@ router.get('/', auth, async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
 
 // Endpoint to update profile data
 router.post('/update', auth, async (req, res) => {
@@ -45,7 +47,6 @@ router.post('/update', auth, async (req, res) => {
       profile.relation = relation;
       profile.emergencyName = emergencyName;
     }
-
     // Save the profile
     await profile.save();
 

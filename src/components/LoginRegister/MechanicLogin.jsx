@@ -1,30 +1,10 @@
+// MechanicLogin.jsx
 import React, { useState } from 'react';
-import '../css/MechanicLogin.css';
+import './MechanicLogin.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import Axios for HTTP requests
 
 const MechanicLogin = () => {
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
-    // const [error, setError] = useState('');
-    // const navigate = useNavigate(); 
-
-    // const handleLogin = async () => {
-    //     try {
-    //         const response = await axios.post('http://localhost:8000/mechauth/mechlogin', {
-    //             email,
-    //             password
-    //         });
-
-    //         // Store user data in local storage
-    //         localStorage.setItem('user', JSON.stringify({ email: email }));
-    //         // Redirect user to home page
-    //         navigate('/');
-    //     } catch (error) {
-    //         console.error('Error logging in:', error);
-    //         setError('Invalid email or password.');
-    //     }
-    // };
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');

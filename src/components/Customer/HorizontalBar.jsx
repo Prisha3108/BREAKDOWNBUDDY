@@ -1,3 +1,4 @@
+// HorizontalBar.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSettings, FiUser, FiClock, FiMessageSquare, FiLogOut } from 'react-icons/fi'; // Import icons from react-icons

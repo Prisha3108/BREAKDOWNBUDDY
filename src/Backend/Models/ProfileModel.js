@@ -15,7 +15,7 @@ const profileSchema = new mongoose.Schema({
   licensePlateNumber: String,
   emergencyContact: Number,
   relation: String,
-  emergencyName: String
+  emergencyName: String,
 });
 
 const Profile = mongoose.model('Profile', profileSchema);

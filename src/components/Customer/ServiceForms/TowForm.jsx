@@ -1,11 +1,12 @@
+// TowForm.jsx
 import React, { useState, useEffect } from 'react';
-import HorizontalBar from './HorizontalBar';
-import '../css/FuelForm.css';
+import HorizontalBar from '../HorizontalBar';
+import './FuelForm.css';
 import { FaUser, FaEnvelope, FaCar, FaStickyNote } from 'react-icons/fa';
 import { IoLocationSharp } from "react-icons/io5";
 import { GiTowTruck } from "react-icons/gi";
 import { FaMapLocationDot } from "react-icons/fa6";
-import license from '../../assests/license-plate.png';
+import license from '../../../assests/license-plate.png'
 import axios from 'axios'; // Import Axios
 
 const TowForm = () => {
