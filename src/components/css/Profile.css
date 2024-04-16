@@ -106,21 +106,37 @@
     padding: 1.5%;
 }
 .name_email{
-    margin-top: 6%;
-    /* border-bottom: 1px solid #d8d8d8; */
-    border: none;
-}
-
-.pf_name_email{
+  display: block;
+  padding-top: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
 }
 .name_fields input {
-    width: 100%;
+    width: 98%;
     height: 4vh;
     margin-bottom: 1rem;
   }
 .right_side{
     width: 100%;
     margin: 0 0 0 7%;
+}
+.vehicle_fields input{
+    width: 84%;
+    height: 4vh;
+    margin-left: 8%;
+    margin-bottom: 1rem;
+}
+.vehicle_dts{
+    display: block;
+  padding-top: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
 }
 .profile_right {
     width: 90%;
@@ -134,7 +150,7 @@
     width: 100%;
     background-color: #fff;
     height: 50vh;
-    margin: 65% 0 0 0%;
+    margin: 13% 0 0 0%;
     border: 1px solid rgb(210, 208, 208);
     border-radius: 3rem;
 }

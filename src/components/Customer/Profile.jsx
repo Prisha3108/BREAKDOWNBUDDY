@@ -14,15 +14,13 @@ const Profile = () => {
     mobileNo: ''
   });
   const [profileData, setProfileData] = useState({
-    Password: ''
-
+    vehicleModel: '',
+    licensePlateNumber: '',
+    emergencyContact: '',
+    relation: '',
+    emergencyName: ''
   });
   const [editMode, setEditMode] = useState(false);
-  const [isUpdatePassw, setUpdatePassw] = useState(false);
-  const [newPassword, setNewPassword] = useState('');
-  const [currentPassword, setCurrentPassword] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-  const [showNewPassword, setShowNewPassword] = useState(false);
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -35,9 +33,10 @@ const Profile = () => {
         const userData = userResponse.data;
         setMyUserData(userData);
 
-        // Fetch user profile data
-        const profileResponse = await axios.get('http://localhost:8000/myprofile/profile', config);
-        setProfileData(profileResponse.data);
+        // Fetch profile data
+        const profileResponse = await axios.get('http://localhost:8000/myprofile', config);
+        const profileData = profileResponse.data;
+        setProfileData(profileData);
       } catch (error) {
         console.error('Error fetching profile data:', error);
       }
@@ -51,28 +50,23 @@ const Profile = () => {
     setProfileData(prevData => ({ ...prevData, [name]: value }));
   };
 
-  const handleSave = async () => {
+  const handleSaveProfile = async () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const profileDataToUpdate = {
-        email: myuserData.email, // Add email field
-        name: myuserData.fullName,
-        mobileNo: myuserData.mobileNo,
-        gender: profileData.gender,
-        address: profileData.address,
-        zipcode: profileData.zipcode,
-        city: profileData.city,
-        state: profileData.state
+
+      const updatedProfileData = {
+        ...myuserData, // Include user data (name, email, mobileNo)
+        ...profileData // Include vehicle details
       };
 
-      await axios.post('http://localhost:8000/myprofile/profile', profileDataToUpdate, config);
-      setEditMode(false);
+      await axios.post('http://localhost:8000/myprofile/update', updatedProfileData, config);
+      setEditMode(false); // Disable edit mode after saving
     } catch (error) {
       console.error('Error saving profile:', error);
+      // Handle error
     }
   };
-
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -83,30 +77,6 @@ const Profile = () => {
       };
       reader.readAsDataURL(file);
     }
-  };
-
-  const toggleUpdatePassword = () => {
-    setUpdatePassw(!isUpdatePassw);
-    // Reset password fields and error on toggle
-    setNewPassword('');
-    setCurrentPassword('');
-    setPasswordError('');
-  };
-
-  const handlePasswordChange = () => {
-    // Here you would implement the logic to check if the current password matches
-    // if (currentPassword === Password) {
-    //   // setUserData({ Password: newPassword });
-    //   setNewPassword('');
-    //   setUpdatePassw(false);
-    //   setPasswordError('');
-    // } else {
-    //   setPasswordError('Current password is incorrect.');
-    // }
-  };
-
-  const toggleShowNewPassword = () => {
-    setShowNewPassword(!showNewPassword);
   };
 
   return (
@@ -129,58 +99,34 @@ const Profile = () => {
             <h2 className='my_profile'>My Profile</h2>
             <div className="pf_name_email">
               <div className='name_fields'>
-                <input type="text" className='name_email' name="fullName" placeholder='Name' id='name' value={myuserData.fullName} onChange={handleInputChange} disabled />
-                <input type="text" className='name_email' name="email" placeholder='Email' id='email' value={myuserData.email} onChange={handleInputChange} disabled />
-                <input type="text" className='name_email' name="mobileNo" placeholder='Mobile No.' id='phone' value={myuserData.mobileNo} onChange={handleInputChange} disabled />
-                
+                <input type="text" className='name_email' name="fullName" placeholder='Name' id='name' value={myuserData.fullName} disabled={!editMode} />
+                <input type="text" className='name_email' name="email" placeholder='Email' id='email' value={myuserData.email} disabled />
+                <input type="text" className='name_email' name="mobileNo" placeholder='Mobile No.' id='phone' value={myuserData.mobileNo} disabled />
               </div>
             </div>
           </div>
+
           <div className="right_side">
             <div className="profile_right">
               <h2 className='my_profile' id='user_pf'>Car Details</h2>
-              <div>
-                <input type="text" name="vehicleModel" />
-                <input type="text" name="licensePlateNumber" />
-                <input type="text" name="emergencyContact" placeholder='Enter your emergency contact number' />
-                <input type="text" name="relation" placeholder='Enter relation with that person' />
-                <input type="text" name="emergencyName" placeholder="Enter contact person's name" />
-                <button onClick={() => setEditMode(true)}>Edit</button>
-
-                <div className="pf_right_below">
-                  <h2 className='my_profile' id='user_pf'> Want to change your password? </h2>
-                  {!isUpdatePassw && (
-                    <div>
-                      <label className='curr_passw'> Current Password</label>
-                      <p className='inp_curr_passw'> {profileData.Password.replace(/./g, '*')} </p>
-                      <button className='update_passw' onClick={toggleUpdatePassword}>Update Password</button>
-                    </div>
-                  )}
-                  {isUpdatePassw && (
-                    <div>
-                      <label className='curr_passw'> Enter Current Password</label>
-                      <input type="password" className='inp_curr_passw' placeholder='Enter your current password' value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} required />
-                      {passwordError && <p className="password-error">{passwordError}</p>}
-                      <label className='curr_passw'> Enter New Password</label>
-                      <div className="password-input">
-                        <input type={showNewPassword ? "text" : "password"} className='inp_curr_passw' placeholder='Enter your new password' value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
-                        <span className="toggle-password" onClick={toggleShowNewPassword}>{showNewPassword ? <FaRegEye /> : <FaRegEyeSlash />}</span>
-                      </div>
-                      <button className='save_btn' onClick={handlePasswordChange}>Save</button>
-                      <button className='cancel_btn' onClick={toggleUpdatePassword}>Cancel</button>
-
-                    </div>
-                  )}
-                </div>
-
-
-                {/* {editMode ? (
+              <div className='vehicle_fields'>
+                <input type="text" className='vehicle_dts' name="vehicleModel" placeholder='Vehicle Model' value={profileData.vehicleModel} onChange={handleInputChange} disabled={!editMode} />
+                <input type="text" className='vehicle_dts' name="licensePlateNumber" placeholder='License Plate Number' value={profileData.licensePlateNumber} onChange={handleInputChange} disabled={!editMode} />
+                <input type="text" className='vehicle_dts' name="emergencyContact" placeholder='Emergency Contact Number' value={profileData.emergencyContact} onChange={handleInputChange} disabled={!editMode} />
+                <input type="text" className='vehicle_dts' name="emergencyName" placeholder="Contact Person's Name" value={profileData.emergencyName} onChange={handleInputChange} disabled={!editMode} />
+                <input type="text" className='vehicle_dts' name="relation" placeholder='Relationship' value={profileData.relation} onChange={handleInputChange} disabled={!editMode} />
+                {editMode ? (
                   <>
-                    <button onClick={handleSave}>Save</button>
-                    <button onClick={() => setEditMode(false)}>Cancel</button>
+                    <button className='save_btn' onClick={handleSaveProfile}>Save</button>
+                    <button className='cancel_btn' onClick={() => setEditMode(false)}>Cancel</button>
                   </>
-                ) : ( */}
-                {/* )} */}
+                ) : (
+                  <button className='edit_btn' onClick={() => setEditMode(true)}>Edit</button>
+                )}
+              </div>
+              <div className="pf_right_below">
+                <h2 className='my_profile' id='user_pf'> Your Current Location </h2>
+                
               </div>
             </div>
           </div>

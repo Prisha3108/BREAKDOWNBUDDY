@@ -1,18 +1,21 @@
+// ProfileModel.js
 const mongoose = require('mongoose');
 
 const profileSchema = new mongoose.Schema({
-  email: {
-    type: String,
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
     unique: true,
     required: true
   },
-  name: String,
-  mobileNo: String,
-  gender: String,
-  address: String,
-  zipcode: String,
-  city: String,
-  state: String,
+  fullName: String,
+  email: String,
+  mobileNo: Number,
+  vehicleModel: String,
+  licensePlateNumber: String,
+  emergencyContact: Number,
+  relation: String,
+  emergencyName: String
 });
 
 const Profile = mongoose.model('Profile', profileSchema);

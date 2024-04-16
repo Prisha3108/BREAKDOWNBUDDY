@@ -53,11 +53,6 @@ const Register = () => {
         } catch (error) {
             if (error.response && error.response.status === 400) {
                 setError('User already exists. Please use a different email.');
-                // Clear input fields
-                // setEmail('');
-                // setFullName('');
-                // setPassword('');
-                // setMobileNo('');
             } else {
                 console.error('Error registering:', error);
             }

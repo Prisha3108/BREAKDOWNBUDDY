@@ -22,7 +22,6 @@ import TyreHistory from './components/Customer/History/TyreHistory';
 import Register from './components/LoginRegister/Register';
 import MechanicLogin from './components/LoginRegister/MechanicLogin';
 import MechanicRegister from './components/LoginRegister/MechanicRegister';
-import DemoProfile from './components/Customer/DemoProfile';
 import ContactForm from './components/ContactForm/ContactForm';
 
 function AppRouter() {
@@ -55,7 +54,6 @@ function AppRouter() {
             <Route path="/mechregister" element={<MechanicRegister />} />
 
 
-            <Route path="/profile2" element={<DemoProfile />} />
 
 
         </Routes>

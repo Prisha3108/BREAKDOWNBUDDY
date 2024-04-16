@@ -1,54 +1,61 @@
 const express = require('express');
 const router = express.Router();
-const Profile = require('../Models/ProfileModel');
-const auth = require('../Controllers/auth');
+const auth = require('../Controllers/auth'); // Import authentication middleware
+const Profile = require('../Models/ProfileModel'); // Import Profile model
 
-router.get('/profile', auth, async (req, res) => {
+// Endpoint to fetch profile data
+router.get('/', auth, async (req, res) => {
   try {
-    // Get the user's email from the request object
-    const userEmail = req.user.email;
+    const userId = req.user.id; // Get user id from authenticated request
 
-    // Fetch the profile data based on the user's email
-    let profile = await Profile.findOne({ email: userEmail });
-    
-    // If no profile exists, create a new one
+    // Find profile by user id
+    const profile = await Profile.findOne({ userId });
+
     if (!profile) {
-      profile = new Profile({ email: userEmail });
-      await profile.save();
+      return res.status(404).json({ message: 'Profile not found' });
     }
 
-    res.json(profile);
+    res.status(200).json(profile);
   } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
+    console.error('Error fetching profile:', error);
+    res.status(500).json({ message: 'Internal server error' });
   }
 });
 
-router.post('/profile', auth, async (req, res) => {
+// Endpoint to update profile data
+router.post('/update', auth, async (req, res) => {
   try {
-    const { name, email, mobileNo, gender, address, zipcode, city, state } = req.body;
-    const userEmail = req.user.email;
+    const userId = req.user.id; // Get user id from authenticated request
+    const { fullName, email, mobileNo, vehicleModel, licensePlateNumber, emergencyContact, relation, emergencyName } = req.body;
 
-    let profile = await Profile.findOne({ email: userEmail });
+    // Check if profile exists for the current user
+    let profile = await Profile.findOne({ userId });
 
     // If profile doesn't exist, create a new one
     if (!profile) {
-      profile = new Profile({ email: userEmail, name, mobileNo, gender, address, zipcode, city, state });
+      profile = new Profile({ userId, fullName, email, mobileNo, vehicleModel, licensePlateNumber, emergencyContact, relation, emergencyName });
     } else {
-      // If profile exists, update it
-      profile.name = name;
+      // If profile exists, update the fields
+      profile.fullName = fullName;
+      profile.email = email;
       profile.mobileNo = mobileNo;
-      profile.gender = gender;
-      profile.address = address;
-      profile.zipcode = zipcode;
-      profile.city = city;
-      profile.state = state;
+      profile.vehicleModel = vehicleModel;
+      profile.licensePlateNumber = licensePlateNumber;
+      profile.emergencyContact = emergencyContact;
+      profile.relation = relation;
+      profile.emergencyName = emergencyName;
     }
 
+    // Save the profile
     await profile.save();
-    res.json(profile);
+
+    res.status(200).json({ message: 'Profile updated successfully', profile });
   } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
+    console.error('Error updating profile:', error);
+    res.status(500).json({ message: 'Internal server error' });
   }
 });
 
 module.exports = router;
+
+

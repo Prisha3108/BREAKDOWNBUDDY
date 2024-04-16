@@ -30,11 +30,7 @@ const userSchema = new mongoose.Schema({
   },
   fullName: String,
   password: String,
-  mobileNo: String,
-  profile: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Profile'
-  }
+  mobileNo: Number
 });
 
 const User = mongoose.model('User', userSchema);

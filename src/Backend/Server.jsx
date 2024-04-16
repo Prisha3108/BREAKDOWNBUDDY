@@ -1,7 +1,6 @@
 // Server.jsx
 const express = require("express");
 const mongoose = require("mongoose");
-// const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 
@@ -39,46 +38,6 @@ app.use("/auth", authRoute);
 app.use("/mechauth", mechauthRoute);
 app.use('/myprofile', profileRoute);
 app.use('/contactus', contactRoute);
-
-
-// // Define schema
-// const dataSchema = new mongoose.Schema({
-//   name: String,
-//   email: String,
-//   password: String,
-// });
-
-// // Define model
-// const Data = mongoose.model('Data', dataSchema);
-
-// // Routes
-// app.get('/api/data', async (req, res) => {
-//   try {
-//     const data = await Data.findOne();
-//     res.json(data);
-//   } catch (error) {
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
-
-// app.post('/api/data', async (req, res) => {
-//   try {
-//     const { name, email, password } = req.body;
-//     let data = await Data.findOne();
-//     if (!data) {
-//       data = new Data({ name, email, password });
-//     } else {
-//       data.name = name;
-//       data.email = email;
-//       data.password = password;
-//     }
-//     await data.save();
-//     res.json(data);
-//   } catch (error) {
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
-
 
 
 app.listen(8000, () => {

@@ -18,16 +18,16 @@ const BatteryForm = () => {
         add_note: ''
     });
 
-      useEffect(() => {
+    useEffect(() => {
         // Fetch user email from local storage and set it as the default value of the email field
         const userEmail = localStorage.getItem('userEmail');
         if (userEmail) {
             setBatteryFormData(prevState => ({
-            ...prevState,
-            email: userEmail
-          }));
+                ...prevState,
+                email: userEmail
+            }));
         }
-      }, []);
+    }, []);
 
     const availableBatteryTypes = ["Lead Acid Battery", "VRLA Batteries", "Lithium-Ion Battery", "Sodium Ion Battery", "Solid-State Battery", "Nickel-Metal Hydride (NiMH) Battery", "Silver Calcium Battery"];
 
@@ -88,7 +88,7 @@ const BatteryForm = () => {
                             <label className='all_labels'> <FaUser /> Full Name </label>
                             <input type="text" className='all_inp_label' placeholder='Enter your name' id='fullName' value={batteryFormData.fullName} onChange={handleChange} required />
                             <label className='all_labels'> <FaEnvelope /> Email ID</label>
-                            <input type="email" className='all_inp_label' placeholder='Enter your email' id='email' value={batteryFormData.email} onChange={handleChange} required />
+                            <input type="email" className='all_inp_label' placeholder='Enter your email' id='email' value={batteryFormData.email} onChange={handleChange} required disabled />
                             <label className='all_labels'> <FaCarBattery /> Current Battery Type</label>
                             <select id="currBatteryType" className='all_inp_label' value={batteryFormData.currBatteryType} onChange={handleChange} required>
                                 <option value="">Select Battery Type</option>
@@ -106,7 +106,7 @@ const BatteryForm = () => {
                             <label className='all_labels'> <FaCar /> Model of Vehicle</label>
                             <input type="text" className='all_inp_label' placeholder='Enter your vehicle model' id='vehicleModel' value={batteryFormData.vehicleModel} onChange={handleChange} required />
                             <label className='all_labels' id='lpn'>
-                            <img src={license} alt="License-Plate" className="license" /> License Plate Number</label>
+                                <img src={license} alt="License-Plate" className="license" /> License Plate Number</label>
                             <input type="text" className='all_inp_label' placeholder='Enter your vehicle license plate number' id='licensePlateNumber' value={batteryFormData.licensePlateNumber} onChange={handleChange} required />
                             <label className='all_labels'> <IoLocationSharp /> Current Location</label>
                             <input type="text" className='all_inp_label' placeholder='Enter your current location' id='currentLocation' value={batteryFormData.currentLocation} onChange={handleChange} required />
