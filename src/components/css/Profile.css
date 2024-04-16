@@ -90,6 +90,7 @@
     object-fit: cover; /* Maintain aspect ratio and cover entire container */
     border-radius: 50%;
 }
+
 .pf_change{
     margin-top: 4%;
     font-size: 0.75rem;

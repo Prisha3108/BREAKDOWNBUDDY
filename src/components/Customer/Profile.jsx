@@ -79,6 +79,21 @@ const Profile = () => {
     }
   };
 
+  const uploadImage = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const config = { headers: { Authorization: `Bearer ${token}` } };
+
+      await axios.post('http://localhost:8000/myprofile/uploadimg', { base64: profileImage }, config);
+      // Update profile image on success
+      setProfileData(prevData => ({ ...prevData, profileImage }));
+      alert("Thank you for providing your image!");
+    } catch (error) {
+      console.error('Error uploading image:', error);
+      // Handle error
+    }
+  };
+
   const handleSubscribe = (e) => {
     e.preventDefault();
     alert('Thank you for subscribing!');
@@ -102,6 +117,8 @@ const Profile = () => {
               <input type="file" accept="image/*" onChange={handleImageChange} style={{ display: 'none' }} id="upload-button" />
             </div>
             <p className='pf_change'>Click on the profile picture to change!</p>
+            <button onClick={uploadImage} className='edit_btn'>Upload</button>
+
             <h2 className='my_profile'>My Profile</h2>
             <div className="pf_name_email">
               <div className='name_fields'>

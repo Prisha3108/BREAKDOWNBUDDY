@@ -16,6 +16,7 @@ const profileSchema = new mongoose.Schema({
   emergencyContact: Number,
   relation: String,
   emergencyName: String,
+  profileImage: String,
 });
 
 const Profile = mongoose.model('Profile', profileSchema);
