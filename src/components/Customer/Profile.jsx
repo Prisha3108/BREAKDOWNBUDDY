@@ -21,6 +21,7 @@ const Profile = () => {
     emergencyName: ''
   });
   const [editMode, setEditMode] = useState(false);
+  const [email, setEmail] = useState('');
 
   useEffect(() => {
     const fetchProfileData = async () => {
@@ -79,6 +80,12 @@ const Profile = () => {
     }
   };
 
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    alert('Thank you for subscribing!');
+    setEmail('');
+  };
+
   return (
     <div className='update_profile'>
       <HorizontalBar />
@@ -125,8 +132,18 @@ const Profile = () => {
                 )}
               </div>
               <div className="pf_right_below">
-                <h2 className='my_profile' id='user_pf'> Your Current Location </h2>
-                
+                <h2 className='my_profile' id='user_pf'> Subscribe to Our Newsletter </h2>
+                <div className="newsletter-container">
+                  <div>
+                    <form className="flex flex-col" onSubmit={handleSubscribe}>
+                      <input placeholder="Enter your email address" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                      <button type="submit">Subscribe</button>
+                    </form>
+                    <div className="flex justify-center mt-4">
+                      <a href="#">Privacy Policy</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
